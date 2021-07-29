@@ -16,14 +16,14 @@ layoutHome = function()
   local right
   local left
   if ide then
-    right = {{ide, nil, HOME_RIGHT_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
+    right = {{ide, nil, HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
     left = {
-      {'Firefox', nil, HOME_LEFT_MONITOR, u(0, 0, 1, 1/2), nil, nil, visible=true},
-      {'iTerm2', nil, HOME_LEFT_MONITOR, u(0, 1/2, 1, 1/2), nil, nil, visible=true}
+      {'Safari', nil, HOME_MONITOR, u(0, 0, 1, 1/2), nil, nil, visible=true},
+      {'iTerm2', nil, HOME_MONITOR, u(0, 1/2, 1, 1/2), nil, nil, visible=true}
     }
   else
-    right = {{'iTerm2', nil, HOME_RIGHT_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
-    left = {{'Firefox', nil, HOME_LEFT_MONITOR, u(0, 1/4, 1, 3/4), nil, nil, visible=true}}
+    right = {{'iTerm2', nil, HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
+    left = {{'Safari', nil, HOME_MONITOR, u(0, 1/4, 1, 3/4), nil, nil, visible=true}}
   end
   local mb = {
     {'Things', nil, MACBOOK_MONITOR, u(0, 0, 1/2, 1), nil, nil, visible=true},
@@ -38,7 +38,7 @@ end
 layoutLaptop = {
   {'Calendar', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil},
   {'Emacs', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil},
-  {'Firefox', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil},
+  {'Safari', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil},
   {'Mail', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil},
   {'Spotify', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil},
   {'Things', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil},

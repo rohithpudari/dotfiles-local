@@ -7,70 +7,12 @@ Include ~/.ssh/config_extra
 Host *
     ServerAliveInterval 120
 
-# mit / csail / pdos
+# uvic / 
 
-Host g
-    User git
-    HostName g.csail.mit.edu
+Host survey
+    User ubuntu
+    HostName seng321.csc.uvic.ca
 
-Host csail
-    User aathalye
-    HostName login.csail.mit.edu
-
-Host ben
-    User anish
-    HostName ben.csail.mit.edu
-    ProxyJump csail
-
-Host vm-web
-    User arch
-    HostName vm-web.pdos.csail.mit.edu
-    ProxyJump csail
-
-Host zero
-    User anish
-    HostName zero.aathalye.csail.mit.edu
-    ProxyJump csail
-
-Host two
-    User anish
-    HostName two.aathalye.csail.mit.edu
-    Port 10022
-
-Host athena
-    User aathalye
-    HostName athena.dialup.mit.edu
-    PreferredAuthentications password,keyboard-interactive
-
-# home
-
-Host server
-    User anish
-    HostName 192.168.0.105
-
-Host gondor
-    User anish
-    HostName 192.168.0.157
-
-Host shire
-    User anish
-    HostName 192.168.0.249
-
-Host bongo
-    User anish
-    HostName 192.168.0.134
-
-Host ts100
-    User founder
-    HostName 192.168.0.125
-
-Host router
-    User root
-    HostName 192.168.0.29
-
-Host router-wireless
-    User root
-    HostName 192.168.0.30
 
 # other
 

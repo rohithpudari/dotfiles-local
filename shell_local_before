@@ -11,10 +11,10 @@ path_prepend '/usr/local/opt/gnu-tar/libexec/gnubin'
 path_prepend '/usr/local/opt/grep/libexec/gnubin'
 
 # Rust / Cargo
-path_prepend "$HOME/.cargo/bin"
+# path_prepend "$HOME/.cargo/bin"
 
 # CrossPack
-path_append '/usr/local/CrossPack-AVR/bin'
+# path_append '/usr/local/CrossPack-AVR/bin'
 
 # RISC-V toolchain
-path_append '/usr/local/opt/riscv-gnu-toolchain/bin'
+# path_append '/usr/local/opt/riscv-gnu-toolchain/bin'
