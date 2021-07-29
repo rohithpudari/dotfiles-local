@@ -1,5 +1,4 @@
-# Dotfiles (local) [![Build Status](https://github.com/anishathalye/dotfiles-local/workflows/CI/badge.svg)](https://github.com/anishathalye/dotfiles-local/actions?query=workflow%3ACI)
-
+# Dotfiles (local) [![Build Status](https://github.com/rohithpudari/dotfiles-local/actions/workflows/build.yml/badge.svg)](https://github.com/rohithpudari/dotfiles-local/actions/workflows/build.yml)
 After cloning this repo, run `install` to automatically set up the development
 environment. Note that the install script is idempotent - running it multiple
 times has no effect.
@@ -21,42 +20,14 @@ Branch Hierarchy
 master
 |
 +- mac
-|  |
-|  +- openai [inactive]
-|
-+- openai-cirrascale [inactive]
-|
-+- linux [formerly linux-server]
-|  |
-|  +- a-srvr
-|  |
-|  +- gpu
-|  |
-|  +- zero
-|  |
-|  +- linux-main
-|
-+- athena
-|
-+- csail [inactive]
-|
-+- linux-desktop [inactive]
-|  |
-|  +- google-android [inactive]
-|
-+- telemetry [inactive]
-|
-+- dropbox [inactive]
-
-old [inactive]
 ```
 
 License
 -------
 
-Copyright (c) 2014-2021 Anish Athalye. Released under the MIT License. See
+Copyright (c) 2014-2021 Rohith Pudari. Released under the MIT License. See
 [LICENSE.md][license] for details.
 
 [dotbot]: https://github.com/anishathalye/dotbot
-[dotfiles]: https://github.com/anishathalye/dotfiles
+[dotfiles]: https://github.com/rohithpudari/dotfiles
 [license]: LICENSE.md
