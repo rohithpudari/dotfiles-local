@@ -16,14 +16,15 @@ layoutHome = function()
   local right
   local left
   if ide then
-    right = {{ide, nil, HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
+    right = {{ide, nil, RIGHT_HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
     left = {
-      {'Safari', nil, HOME_MONITOR, u(0, 0, 1, 1/2), nil, nil, visible=true},
-      {'iTerm2', nil, HOME_MONITOR, u(0, 1/2, 1, 1/2), nil, nil, visible=true}
+      {'Safari', nil, MAIN_HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true},
+      {'iTerm2', nil, MACBOOK_MONITOR, u(0, 1/2, 1, 1/2), nil, nil, visible=true}
     }
   else
-    right = {{'iTerm2', nil, HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
-    left = {{'Safari', nil, HOME_MONITOR, u(0, 1/4, 1, 3/4), nil, nil, visible=true}}
+    right = {{'iTerm2', nil, RIGHT_HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true},
+            {'Terminal',nil,MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
+    left = {{'Safari', nil, MAIN_HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
   end
   local mb = {
     {'Things', nil, MACBOOK_MONITOR, u(0, 0, 1/2, 1), nil, nil, visible=true},
@@ -87,7 +88,7 @@ hasScreen = function(name)
 end
 
 autoLayout = function()
-  if hasScreen(HOME_LEFT_MONITOR) and hasScreen(HOME_RIGHT_MONITOR) then
+  if hasScreen(RIGHT_HOME_MONITOR) and hasScreen(MAIN_HOME_MONITOR) then
     local ide, layout = layoutHome()
     local name = ide or 'Terminal'
     local description = 'Home (' .. name .. ')'
