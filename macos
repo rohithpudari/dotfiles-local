@@ -30,7 +30,7 @@ defaults write -g NSAutomaticDashSubstitutionEnabled -bool false
 defaults write -g NSAutomaticCapitalizationEnabled -bool false
 
 # normal scroll direction
-defaults write -g com.apple.swipescrolldirection -bool false
+defaults write -g com.apple.swipescrolldirection -bool true
 
 # expand print panel by default
 defaults write -g PMPrintingExpandedStateForPrint -bool true
