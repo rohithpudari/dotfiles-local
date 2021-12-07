@@ -15,12 +15,12 @@ ldfu() {
 # alias e='open-emacs'
 
 # Sync and Backup
-# DOCUMENT_ROOT="$HOME/Documents/Anish"
+# DOCUMENT_ROOT="$HOME/Documents"
 # Backup
 # BORGPREFIX="mbp-"
 # BORGSHIRE='shire:borg'
 # alias backup-shire="do-borg-backup $DOCUMENT_ROOT $BORGSHIRE $BORGPREFIX $HOME/.borg.shire"
-# BORGSERVER='server:/media/raid2/borg/anish'
+# BORGSERVER='server:/media/raid2/borg/rohith'
 # alias backup-server="do-borg-backup $DOCUMENT_ROOT $BORGSERVER $BORGPREFIX"
 
 # Homebrew and Related Tools
