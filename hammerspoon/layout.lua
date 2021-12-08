@@ -19,17 +19,17 @@ layoutHome = function()
     right = {{ide, nil, RIGHT_HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
     left = {
       {'Safari', nil, MAIN_HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true},
-      {'iTerm2', nil, MACBOOK_MONITOR, u(0, 1/2, 1, 1/2), nil, nil, visible=true}
+      {'Terminal', nil, MACBOOK_MONITOR, u(0, 1/2, 1, 1/2), nil, nil, visible=true}
     }
   else
-    right = {{'iTerm2', nil, RIGHT_HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true},
+    right = {{'ProtonVPN', nil, RIGHT_HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true},
             {'Terminal',nil,MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
     left = {{'Safari', nil, MAIN_HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
   end
   local mb = {
     {'Things', nil, MACBOOK_MONITOR, u(0, 0, 1/2, 1), nil, nil, visible=true},
     {'Calendar', nil, MACBOOK_MONITOR, u(1/2, 0, 1/2, 1), nil, nil, visible=true},
-    {'Keybase', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil},
+    {'Slack', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true},
     {'Mail', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=false},
     {'Spotify', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=false}
   }
@@ -38,13 +38,13 @@ end
 
 layoutLaptop = {
   {'Calendar', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil},
-  {'Emacs', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil},
+  {'Slack', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil},
   {'Safari', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil},
   {'Mail', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil},
   {'Spotify', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil},
   {'Things', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil},
   {'iTerm2', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil},
-  {'Keybase', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil}
+  {'Zoom', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil}
 }
 
 applyLayout = function(name, layout)

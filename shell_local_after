@@ -10,10 +10,6 @@ ldfu() {
     )
 }
 
-# Aliases
-# alias open-emacs='open -a /Applications/Emacs.app'
-# alias e='open-emacs'
-
 # Sync and Backup
 # DOCUMENT_ROOT="$HOME/Documents"
 # Backup
