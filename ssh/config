@@ -13,6 +13,10 @@ Host survey
     User ubuntu
     HostName seng321.csc.uvic.ca
 
+# compute canada /
+Host ccdb
+    User rpudari
+    HostName cedar.computecanada.ca
 
 # other
 
