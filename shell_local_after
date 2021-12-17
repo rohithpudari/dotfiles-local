@@ -10,14 +10,14 @@ ldfu() {
     )
 }
 
-# Sync and Backup
-# DOCUMENT_ROOT="$HOME/Documents"
-# Backup
-# BORGPREFIX="mbp-"
-# BORGSHIRE='shire:borg'
-# alias backup-shire="do-borg-backup $DOCUMENT_ROOT $BORGSHIRE $BORGPREFIX $HOME/.borg.shire"
-# BORGSERVER='server:/media/raid2/borg/rohith'
-# alias backup-server="do-borg-backup $DOCUMENT_ROOT $BORGSERVER $BORGPREFIX"
+#aliases
+alias gpgst='gpg2 -k --list-options show-uid-validity'
+alias gpgsgn='gpg2 --ask-cert-level --edit-key'
+
+# Push and jump
+pj() {
+    pushd "$(autojump $@)"
+}
 
 # Homebrew and Related Tools
 export HOMEBREW_NO_ANALYTICS=1
