@@ -1,3 +1,5 @@
+hyper = {"ctrl", "alt", "cmd"}
+
 require('lib')
 require('config')
 require('settings')
@@ -7,3 +9,5 @@ require('window')
 require('layout')
 require('util')
 require('shortcut')
+require('pomo')
+require("auto-audio")

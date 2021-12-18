@@ -1,3 +1,4 @@
+-- Auto reload
 function reload(files)
   for _, file in pairs(files) do
     if file:sub(-4) == ".lua" then
