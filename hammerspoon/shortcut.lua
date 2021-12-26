@@ -48,7 +48,25 @@ hs.hotkey.bind(hyper, "M", function() hs.application.launchOrFocus("Activity Mon
 hs.hotkey.bind(hyper, "S", function() hs.application.launchOrFocus("Slack") end)
 
 -- Hyper+F makes toggles app zoom
-hs.hotkey.bind(hyper, "F", function() hs.window.focusedWindow():toggleZoom() end)
+hs.hotkey.bind(hyper, "F", function() hs.application.launchOrFocus("Finder") end)
+
+-- Hyper+C opens VS Code
+hs.hotkey.bind(hyper, "C", function() hs.application.launchOrFocus("Visual Studio Code") end)
+
+-- Hyper+O opens obsidian
+hs.hotkey.bind(hyper, "O", function() hs.application.launchOrFocus("Obsidian") end)
+
+--Hyper+B opens BibDesk
+hs.hotkey.bind(hyper, "B", function() hs.application.launchOrFocus("BibDesk") end)
+
+--Hyper+P opens ProtonVPN
+hs.hotkey.bind(hyper, "V", function() hs.application.launchOrFocus("ProtonVPN") end)
+
+--Hyper+Z opens Zoom
+hs.hotkey.bind(hyper, "Z", function() hs.application.launchOrFocus("zoom.us") end)
+
+--Hyper+I opens Music
+hs.hotkey.bind(hyper, "I", function() hs.application.launchOrFocus("Music") end)
 
 -- Ctrl+Cmd + Escape -- Sleeps the Computer
 hs.hotkey.bind({"ctrl", "cmd"}, "escape", function() hs.caffeinate.systemSleep() end)
