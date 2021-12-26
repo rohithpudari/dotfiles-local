@@ -30,4 +30,4 @@ Copyright (c) 2014-2021 Rohith Pudari. Released under the MIT License. See
 
 [dotbot]: https://github.com/anishathalye/dotbot
 [dotfiles]: https://github.com/rohithpudari/dotfiles
-[license]: LICENSE.md
+[license]: LICENSE
