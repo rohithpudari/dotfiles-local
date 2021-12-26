@@ -27,11 +27,9 @@ brew "libyaml"
 brew "make"
 brew "node"
 brew "pinentry-mac"
-brew "postgresql", restart_service: true
-brew "protobuf", link: false
+brew "protobuf"
 brew "pyenv"
 brew "python@3.8"
-brew "rtorrent"
 brew "ruby"
 brew "ruby-install"
 brew "tmux"
