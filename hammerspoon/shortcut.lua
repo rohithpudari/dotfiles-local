@@ -35,9 +35,6 @@ hs.hotkey.bind({"cmd"}, "return", openTerminal)
 -- ⌘ + ⇧ + ⏎ Opens New Browser Window
 hs.hotkey.bind({"cmd","shift"}, "return", openBrowser)
 
--- Hyper+V types contents of clipboard
-hs.hotkey.bind(hyper, "V", function() hs.eventtap.keyStrokes(hs.pasteboard.getContents()) end)
-
 -- Hyper+` Brings up Hammerspoon console
 hs.hotkey.bind(hyper, "`", function() hs.openConsole() end)
 
@@ -59,9 +56,6 @@ hs.hotkey.bind(hyper, "O", function() hs.application.launchOrFocus("Obsidian") e
 --Hyper+B opens BibDesk
 hs.hotkey.bind(hyper, "B", function() hs.application.launchOrFocus("BibDesk") end)
 
---Hyper+P opens ProtonVPN
-hs.hotkey.bind(hyper, "V", function() hs.application.launchOrFocus("ProtonVPN") end)
-
 --Hyper+Z opens Zoom
 hs.hotkey.bind(hyper, "Z", function() hs.application.launchOrFocus("zoom.us") end)
 
@@ -74,5 +68,5 @@ hs.hotkey.bind({"ctrl", "cmd"}, "escape", function() hs.caffeinate.systemSleep()
 -- Ctrl+Shift + Escape -- Sleeps the displays
 hs.hotkey.bind({"ctrl", "shift"}, "escape", function() os.execute("pmset displaysleepnow") end)
 
--- Ctrl+Cmd+Alt + P -- Toggle Caps Lock
+-- Ctrl+Cmd+Alt + P -- Toggle Caps Lock -- do again to toggle off
 hs.hotkey.bind({"ctrl", "cmd", "alt"}, "P", function() hs.hid.capslock.toggle() end)
