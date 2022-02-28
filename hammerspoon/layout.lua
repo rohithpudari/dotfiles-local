@@ -19,7 +19,7 @@ layoutHome = function()
     right = {{ide, nil, RIGHT_HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
     left = {
       {'Safari', nil, MAIN_HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true},
-      {'Terminal', nil, MACBOOK_MONITOR, u(0, 1/2, 1, 1/2), nil, nil, visible=true}
+      {'Terminal', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}
     }
   else
     right = {{'ProtonVPN', nil, RIGHT_HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true},
