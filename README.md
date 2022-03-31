@@ -17,9 +17,7 @@ Branch Hierarchy
 ----------------
 
 ```
-master
-|
-+- mac
+mac - includes MacOS configuration files
 ```
 
 License
