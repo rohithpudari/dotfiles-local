@@ -7,19 +7,33 @@ Include ~/.ssh/config_extra
 Host *
     ServerAliveInterval 120
 
-# uvic / 
+# UofT ECE
 
-Host survey
-    User ubuntu
-    HostName seng321.csc.uvic.ca
+# password server
+Host picton
+    user rpudari
+    HostName picton.eecg.utoronto.ca
 
-# compute canada /
-Host ccdb
-    User rpudari
-    HostName cedar.computecanada.ca
+# eecg group servers:wq
+Host seth
+    user rpudari
+    HostName seth.eecg.toronto.edu
+
+Host anubis
+    user rpudari
+    HostName anubis.eecg.utoronto.edu
+
+# FORCOLAB server
+Host torrent
+    user rpudari
+    HostName torrent.eecg.utoronto.ca
+
+# samba password
+Host samba
+    user rpudari
+    HostName flames.eecg.utoronto.ca
 
 # other
-
 Host github
     User git
     HostName github.com
