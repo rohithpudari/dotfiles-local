@@ -21,7 +21,7 @@ Host seth
 
 Host anubis
     user rpudari
-    HostName anubis.eecg.utoronto.edu
+    HostName anubis.eecg.toronto.edu
 
 # FORCOLAB server
 Host torrent
