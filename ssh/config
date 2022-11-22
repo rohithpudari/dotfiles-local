@@ -14,7 +14,7 @@ Host picton
     user rpudari
     HostName picton.eecg.utoronto.ca
 
-# eecg group servers:wq
+# eecg group servers
 Host seth
     user rpudari
     HostName seth.eecg.toronto.edu
@@ -22,6 +22,10 @@ Host seth
 Host anubis
     user rpudari
     HostName anubis.eecg.toronto.edu
+
+Host bastet
+    user rpudari
+    HostName bastet.eecg.toronto.edu
 
 # FORCOLAB server
 Host torrent
