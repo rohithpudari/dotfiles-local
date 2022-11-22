@@ -69,4 +69,4 @@ hs.hotkey.bind({"ctrl", "cmd"}, "escape", function() hs.caffeinate.systemSleep()
 hs.hotkey.bind({"ctrl", "shift"}, "escape", function() os.execute("pmset displaysleepnow") end)
 
 -- Ctrl+Cmd+Alt + P -- Toggle Caps Lock -- do again to toggle off
-hs.hotkey.bind({"ctrl", "cmd", "alt"}, "P", function() hs.hid.capslock.toggle() end)
+hs.hotkey.bind(hyper, "P", function() hs.hid.capslock.toggle() end)
