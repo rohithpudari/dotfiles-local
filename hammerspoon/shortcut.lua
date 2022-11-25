@@ -22,12 +22,12 @@ end
 hs.hotkey.bind({'shift', 'cmd'}, 'l', function() hs.caffeinate.startScreensaver() end)
 
 -- simulate media keys for external keyboard
-hs.hotkey.bind({'shift', 'cmd'}, 'pad5', function() systemKey('PLAY') end)
-hs.hotkey.bind({'shift', 'cmd'}, 'pad4', function() systemKey('PREVIOUS') end)
-hs.hotkey.bind({'shift', 'cmd'}, 'pad6', function() systemKey('NEXT') end)
-hs.hotkey.bind({'shift', 'cmd'}, 'pad8', function() systemKey('SOUND_UP') end)
-hs.hotkey.bind({'shift', 'cmd'}, 'pad2', function() systemKey('SOUND_DOWN') end)
-hs.hotkey.bind({'shift', 'cmd'}, 'pad0', function() systemKey('MUTE') end)
+hs.hotkey.bind(hyper, 'K', function() systemKey('PLAY') end)
+hs.hotkey.bind(hyper, 'J', function() systemKey('PREVIOUS') end)
+hs.hotkey.bind(hyper, 'L', function() systemKey('NEXT') end)
+hs.hotkey.bind(hyper, 'I', function() systemKey('SOUND_UP') end)
+hs.hotkey.bind(hyper, ',', function() systemKey('SOUND_DOWN') end)
+hs.hotkey.bind(hyper, '0', function() systemKey('MUTE') end)
 
 -- ⌘ + ⏎ Opens New Terminal
 hs.hotkey.bind({"cmd"}, "return", openTerminal)
@@ -59,8 +59,8 @@ hs.hotkey.bind(hyper, "B", function() hs.application.launchOrFocus("BibDesk") en
 --Hyper+Z opens Zoom
 hs.hotkey.bind(hyper, "Z", function() hs.application.launchOrFocus("zoom.us") end)
 
---Hyper+I opens Music
-hs.hotkey.bind(hyper, "I", function() hs.application.launchOrFocus("Music") end)
+-- --Hyper+I opens Music
+-- hs.hotkey.bind(hyper, "I", function() hs.application.launchOrFocus("Music") end)
 
 -- Ctrl+Cmd + Escape -- Sleeps the Computer
 hs.hotkey.bind({"ctrl", "cmd"}, "escape", function() hs.caffeinate.systemSleep() end)
