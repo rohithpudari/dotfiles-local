@@ -19,7 +19,7 @@ function openBrowser()
 end
 
 -- lock screen by starting screensaver
-hs.hotkey.bind({'shift', 'cmd'}, 'l', function() hs.caffeinate.startScreensaver() end)
+hs.hotkey.bind(mod, 'l', function() hs.caffeinate.startScreensaver() end)
 
 -- simulate media keys for external keyboard
 hs.hotkey.bind(hyper, 'K', function() systemKey('PLAY') end)
@@ -30,10 +30,10 @@ hs.hotkey.bind(hyper, ',', function() systemKey('SOUND_DOWN') end)
 hs.hotkey.bind(hyper, '0', function() systemKey('MUTE') end)
 
 -- ⌘ + ⏎ Opens New Terminal
-hs.hotkey.bind({"cmd"}, "return", openTerminal)
+hs.hotkey.bind(hyper, "return", openTerminal)
 
 -- ⌘ + ⇧ + ⏎ Opens New Browser Window
-hs.hotkey.bind({"cmd","shift"}, "return", openBrowser)
+hs.hotkey.bind(mod, "return", openBrowser)
 
 -- Hyper+` Brings up Hammerspoon console
 hs.hotkey.bind(hyper, "`", function() hs.openConsole() end)
@@ -63,10 +63,10 @@ hs.hotkey.bind(hyper, "Z", function() hs.application.launchOrFocus("zoom.us") en
 -- hs.hotkey.bind(hyper, "I", function() hs.application.launchOrFocus("Music") end)
 
 -- Ctrl+Cmd + Escape -- Sleeps the Computer
-hs.hotkey.bind({"ctrl", "cmd"}, "escape", function() hs.caffeinate.systemSleep() end)
+hs.hotkey.bind(mod, "escape", function() hs.caffeinate.systemSleep() end)
 
 -- Ctrl+Shift + Escape -- Sleeps the displays
-hs.hotkey.bind({"ctrl", "shift"}, "escape", function() os.execute("pmset displaysleepnow") end)
+hs.hotkey.bind(mod, "escape", function() os.execute("pmset displaysleepnow") end)
 
 -- Ctrl+Cmd+Alt + P -- Toggle Caps Lock -- do again to toggle off
-hs.hotkey.bind(hyper, "P", function() hs.hid.capslock.toggle() end)
+hs.hotkey.bind(hyper, "C", function() hs.hid.capslock.toggle() end)

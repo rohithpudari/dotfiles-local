@@ -5,16 +5,16 @@ hs.hotkey.bind('cmd', 'up', function() hs.window.focusedWindow():moveToUnit({0, 
 hs.hotkey.bind('cmd', 'down', function() hs.window.focusedWindow():moveToUnit({0, 0.5, 1, 0.5}) end)
 
 -- quarter of screen
-hs.hotkey.bind({'shift', 'cmd'}, 'left', function() hs.window.focusedWindow():moveToUnit({0, 0, 0.5, 0.5}) end)
-hs.hotkey.bind({'shift', 'cmd'}, 'right', function() hs.window.focusedWindow():moveToUnit({0.5, 0.5, 0.5, 0.5}) end)
-hs.hotkey.bind({'shift', 'cmd'}, 'up', function() hs.window.focusedWindow():moveToUnit({0.5, 0, 0.5, 0.5}) end)
-hs.hotkey.bind({'shift', 'cmd'}, 'down', function() hs.window.focusedWindow():moveToUnit({0, 0.5, 0.5, 0.5}) end)
+hs.hotkey.bind(mod, 'left', function() hs.window.focusedWindow():moveToUnit({0, 0, 0.5, 0.5}) end)
+hs.hotkey.bind(mod, 'right', function() hs.window.focusedWindow():moveToUnit({0.5, 0.5, 0.5, 0.5}) end)
+hs.hotkey.bind(mod, 'up', function() hs.window.focusedWindow():moveToUnit({0.5, 0, 0.5, 0.5}) end)
+hs.hotkey.bind(mod, 'down', function() hs.window.focusedWindow():moveToUnit({0, 0.5, 0.5, 0.5}) end)
 
 -- full screen
-hs.hotkey.bind({'shift','cmd'}, 'f', function() hs.window.focusedWindow():moveToUnit({0, 0, 1, 1}) end)
+hs.hotkey.bind(mod, 'f', function() hs.window.focusedWindow():moveToUnit({0, 0, 1, 1}) end)
 
 -- center screen
-hs.hotkey.bind({'shift','cmd'}, 'c', function() hs.window.focusedWindow():centerOnScreen() end)
+hs.hotkey.bind(mod, 'c', function() hs.window.focusedWindow():centerOnScreen() end)
 
 -- move between displays
 hs.hotkey.bind(hyper, 'right', function()

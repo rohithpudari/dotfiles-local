@@ -1,4 +1,5 @@
 hyper = {"ctrl", "alt", "cmd"}
+mod = {"ctrl", "cmd"}
 
 require('lib')
 require('config')
