@@ -11,20 +11,45 @@ local detectIDE = function()
   return ide
 end
 
+layoutOffice = function()
+  local ide = detectIDE()
+  local right
+  local left
+  if ide then
+    right = {{ide, nil, RIGHT_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
+    left = {
+      {'Safari', nil, MAIN_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true},
+      {'Slack', nil, MAIN_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true},
+      {'Mail', nil, MAIN_MONITOR, u(0,0,1,1), nil, nil, visible=true}
+    }
+  else
+    right = {{'Mail',nil, RIGHT_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
+    left = {{'Safari', nil, MAIN_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
+  end
+  local mb = {
+    {'Things', nil, MACBOOK_MONITOR, u(0, 0, 1/2, 1), nil, nil, visible=true},
+    {'Calendar', nil, MACBOOK_MONITOR, u(1/2, 0, 1/2, 1), nil, nil, visible=true},
+    -- {'Slack', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true},
+    -- {'Mail', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=false},
+    {'Spotify', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=false}
+  }
+  return ide, concat(left, right, mb)
+end
+
 layoutHome = function()
   local ide = detectIDE()
   local right
   local left
   if ide then
-    right = {{ide, nil, RIGHT_HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
+    right = {{ide, nil, HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
     left = {
-      {'Safari', nil, MAIN_HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true},
-      {'Terminal', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}
+      {'Safari', nil, HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true},
+      {'Slack', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true},
+      {'Mail', nil, MACBOOK_MONITOR, u(0,0,1,1), nil, nil, visible=true}
     }
   else
-    right = {{'ProtonVPN', nil, RIGHT_HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true},
-            {'Terminal',nil,MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
-    left = {{'Safari', nil, MAIN_HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
+    right = {{'Safari',nil, HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
+    left = {{'Mail', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
   end
   local mb = {
     {'Things', nil, MACBOOK_MONITOR, u(0, 0, 1/2, 1), nil, nil, visible=true},
@@ -88,11 +113,16 @@ hasScreen = function(name)
 end
 
 autoLayout = function()
-  if hasScreen(RIGHT_HOME_MONITOR) and hasScreen(MAIN_HOME_MONITOR) then
-    local ide, layout = layoutHome()
+  if hasScreen(RIGHT_MONITOR) and hasScreen(MAIN_MONITOR) then
+    local ide, layout = layoutOffice()
     local name = ide or 'Terminal'
-    local description = 'Home (' .. name .. ')'
+    local description = 'Office (' .. name .. ')'
     applyLayout(description, layout)
+  elseif hasScreen(HOME_MONITOR) and hasScreen(MACBOOK_MONITOR) then
+      local ide, layout = layoutHome()
+      local name = ide or 'Terminal'
+      local description = 'Home (' .. name .. ')'
+      applyLayout(description, layout) 
   elseif #hs.screen.allScreens() == 1 then
     applyLayout('Laptop', layoutLaptop)
   end
