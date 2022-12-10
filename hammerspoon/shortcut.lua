@@ -10,22 +10,25 @@ function openTerminal()
 end
 
 function openBrowser()
-  -- kitty
   k = hs.application.find("Safari")
-  if k == nil then
-      hs.application.launchOrFocus("Safari")
-  end
+  hs.application.launchOrFocus("Safari")
   k:selectMenuItem("New Window")
 end
 
--- lock screen by starting screensaver
-hs.hotkey.bind(mod, 'l', function() hs.caffeinate.startScreensaver() end)
+function openPrivateBrowser()
+  k = hs.application.find("Safari")
+  hs.application.open("Safari")
+  k:selectMenuItem("New Private Window")
+end
+
+-- lock screen by starting lock screen
+hs.hotkey.bind(hyper, 'q', function() hs.caffeinate.lockScreen() end)
 
 -- simulate media keys for external keyboard
-hs.hotkey.bind(hyper, 'K', function() systemKey('PLAY') end)
-hs.hotkey.bind(hyper, 'J', function() systemKey('PREVIOUS') end)
-hs.hotkey.bind(hyper, 'L', function() systemKey('NEXT') end)
-hs.hotkey.bind(hyper, 'I', function() systemKey('SOUND_UP') end)
+hs.hotkey.bind(hyper, 'k', function() systemKey('PLAY') end)
+hs.hotkey.bind(hyper, 'j', function() systemKey('PREVIOUS') end)
+hs.hotkey.bind(hyper, 'l', function() systemKey('NEXT') end)
+hs.hotkey.bind(hyper, 'i', function() systemKey('SOUND_UP') end)
 hs.hotkey.bind(hyper, ',', function() systemKey('SOUND_DOWN') end)
 hs.hotkey.bind(hyper, '0', function() systemKey('MUTE') end)
 
@@ -33,31 +36,34 @@ hs.hotkey.bind(hyper, '0', function() systemKey('MUTE') end)
 hs.hotkey.bind(hyper, "return", openTerminal)
 
 -- ⌘ + ⇧ + ⏎ Opens New Browser Window
-hs.hotkey.bind(mod, "return", openBrowser)
+hs.hotkey.bind(hyper, "return", openBrowser)
+
+-- ⌘ + ⇧ + ⏎ Opens New private Browser Window
+hs.hotkey.bind(hyper, "space", openPrivateBrowser)
 
 -- Hyper+` Brings up Hammerspoon console
 hs.hotkey.bind(hyper, "`", function() hs.openConsole() end)
 
 -- Launch or Focus Activity Monitor
-hs.hotkey.bind(hyper, "M", function() hs.application.launchOrFocus("Activity Monitor") end)
+hs.hotkey.bind(hyper, "m", function() hs.application.launchOrFocus("Activity Monitor") end)
 
 -- Launch or Focus Activity Monitor
-hs.hotkey.bind(hyper, "S", function() hs.application.launchOrFocus("Slack") end)
+hs.hotkey.bind(hyper, "s", function() hs.application.launchOrFocus("Slack") end)
 
 -- Hyper+F makes toggles app zoom
-hs.hotkey.bind(hyper, "F", function() hs.application.launchOrFocus("Finder") end)
+hs.hotkey.bind(hyper, "f", function() hs.application.launchOrFocus("Finder") end)
 
 -- Hyper+C opens VS Code
-hs.hotkey.bind(hyper, "C", function() hs.application.launchOrFocus("Visual Studio Code") end)
+hs.hotkey.bind(hyper, "v", function() hs.application.launchOrFocus("Visual Studio Code") end)
 
 -- Hyper+O opens obsidian
-hs.hotkey.bind(hyper, "O", function() hs.application.launchOrFocus("Obsidian") end)
+hs.hotkey.bind(hyper, "o", function() hs.application.launchOrFocus("Obsidian") end)
 
 --Hyper+B opens BibDesk
-hs.hotkey.bind(hyper, "B", function() hs.application.launchOrFocus("BibDesk") end)
+hs.hotkey.bind(hyper, "b", function() hs.application.launchOrFocus("BibDesk") end)
 
 --Hyper+Z opens Zoom
-hs.hotkey.bind(hyper, "Z", function() hs.application.launchOrFocus("zoom.us") end)
+hs.hotkey.bind(hyper, "z", function() hs.application.launchOrFocus("zoom.us") end)
 
 -- --Hyper+I opens Music
 -- hs.hotkey.bind(hyper, "I", function() hs.application.launchOrFocus("Music") end)
@@ -65,8 +71,5 @@ hs.hotkey.bind(hyper, "Z", function() hs.application.launchOrFocus("zoom.us") en
 -- Ctrl+Cmd + Escape -- Sleeps the Computer
 hs.hotkey.bind(mod, "escape", function() hs.caffeinate.systemSleep() end)
 
--- Ctrl+Shift + Escape -- Sleeps the displays
-hs.hotkey.bind(mod, "escape", function() os.execute("pmset displaysleepnow") end)
-
 -- Ctrl+Cmd+Alt + P -- Toggle Caps Lock -- do again to toggle off
-hs.hotkey.bind(hyper, "C", function() hs.hid.capslock.toggle() end)
+hs.hotkey.bind(hyper, "P", function() hs.hid.capslock.toggle() end)

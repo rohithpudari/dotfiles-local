@@ -1,2 +1,4 @@
-hs.grid.setGrid('5x3', MAIN_HOME_MONITOR)
-hs.grid.setGrid('2x4',RIGHT_HOME_MONITOR)
+hs.grid.setGrid('2x4', MAIN_MONITOR)
+hs.grid.setGrid('2x4',RIGHT_MONITOR)
+
+hs.grid.setGrid('2x4',HOME_MONITOR)
