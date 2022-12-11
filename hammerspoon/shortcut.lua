@@ -1,3 +1,8 @@
+function systemKey(key)
+  hs.eventtap.event.newSystemKeyEvent(key, true):post()
+  hs.eventtap.event.newSystemKeyEvent(key, false):post()
+end
+
 function openPrivateBrowser()
   k = hs.application.find("Safari")
   hs.application.open("Safari")
