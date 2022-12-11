@@ -1,20 +1,3 @@
-function systemKey(key)
-  hs.eventtap.event.newSystemKeyEvent(key, true):post()
-  hs.eventtap.event.newSystemKeyEvent(key, false):post()
-end
-
-function openTerminal()
-  -- os.execute('open -nF /Applications/Terminal.app')
-  hs.application.launchOrFocus("Terminal")
-  hs.eventtap.keyStroke({"cmd"}, "n")
-end
-
-function openBrowser()
-  k = hs.application.find("Safari")
-  hs.application.launchOrFocus("Safari")
-  k:selectMenuItem("New Window")
-end
-
 function openPrivateBrowser()
   k = hs.application.find("Safari")
   hs.application.open("Safari")
@@ -33,10 +16,10 @@ hs.hotkey.bind(hyper, ',', function() systemKey('SOUND_DOWN') end)
 hs.hotkey.bind(hyper, '0', function() systemKey('MUTE') end)
 
 -- ⌘ + ⏎ Opens New Terminal
-hs.hotkey.bind(hyper, "return", openTerminal)
+hs.hotkey.bind(hyper, "t", function() hs.application.launchOrFocus("Terminal") end) 
 
 -- ⌘ + ⇧ + ⏎ Opens New Browser Window
-hs.hotkey.bind(hyper, "return", openBrowser)
+hs.hotkey.bind(hyper, "return", function() hs.application.launchOrFocus("Safari") end)
 
 -- ⌘ + ⇧ + ⏎ Opens New private Browser Window
 hs.hotkey.bind(hyper, "space", openPrivateBrowser)
