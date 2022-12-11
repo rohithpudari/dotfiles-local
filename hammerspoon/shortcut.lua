@@ -19,10 +19,10 @@ hs.hotkey.bind(hyper, '0', function() systemKey('MUTE') end)
 hs.hotkey.bind(hyper, "t", function() hs.application.launchOrFocus("Terminal") end) 
 
 -- ⌘ + ⇧ + ⏎ Opens New Browser Window
-hs.hotkey.bind(hyper, "return", function() hs.application.launchOrFocus("Safari") end)
+hs.hotkey.bind(hyper, "space", function() hs.application.launchOrFocus("Safari") end)
 
 -- ⌘ + ⇧ + ⏎ Opens New private Browser Window
-hs.hotkey.bind(hyper, "space", openPrivateBrowser)
+hs.hotkey.bind(hyper, "return", openPrivateBrowser)
 
 -- Hyper+` Brings up Hammerspoon console
 hs.hotkey.bind(hyper, "`", function() hs.openConsole() end)
