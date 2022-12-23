@@ -21,7 +21,7 @@ hs.hotkey.bind(hyper, ',', function() systemKey('SOUND_DOWN') end)
 hs.hotkey.bind(hyper, '0', function() systemKey('MUTE') end)
 
 -- ⌘ + ⏎ Opens New Terminal
-hs.hotkey.bind(hyper, "t", function() hs.application.launchOrFocus("Terminal") end) 
+-- hs.hotkey.bind(hyper, "t", function() hs.application.launchOrFocus("Terminal") end) 
 
 -- ⌘ + ⇧ + ⏎ Opens New Browser Window
 hs.hotkey.bind(hyper, "space", function() hs.application.launchOrFocus("Safari") end)
@@ -39,7 +39,7 @@ hs.hotkey.bind(hyper, "m", function() hs.application.launchOrFocus("Activity Mon
 hs.hotkey.bind(hyper, "s", function() hs.application.launchOrFocus("Slack") end)
 
 -- Hyper+F makes toggles app zoom
-hs.hotkey.bind(hyper, "f", function() hs.application.launchOrFocus("Finder") end)
+-- hs.hotkey.bind(hyper, "f", function() hs.application.launchOrFocus("Finder") end)
 
 -- Hyper+C opens VS Code
 hs.hotkey.bind(hyper, "v", function() hs.application.launchOrFocus("Visual Studio Code") end)

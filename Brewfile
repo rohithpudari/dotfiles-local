@@ -1,40 +1,176 @@
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/core"
-tap "homebrew/services"
-brew "act"
-brew "readline"
-brew "aria2"
-brew "gdbm"
-brew "xz"
-brew "autojump"
-brew "automake"
-brew "bazel"
-brew "bison"
-brew "libffi"
-brew "python@3.9"
-brew "chruby"
-brew "clang-format"
-brew "coreutils"
-brew "findutils"
-brew "gh"
-brew "git"
-brew "gnu-sed"
-brew "gnu-tar"
-brew "pinentry"
-brew "gnupg"
-brew "gobject-introspection"
-brew "grep"
-brew "libyaml"
-brew "make"
-brew "node"
-brew "pinentry-mac"
-brew "protobuf"
-brew "pyenv"
-brew "python@3.8"
-brew "ruby"
-brew "ruby-install"
-brew "tmux"
-brew "wget"
-cask "hammerspoon"
-cask "java8"
+act
+aom
+autoconf
+autojump
+automake
+bazel
+bdw-gc
+bison
+brotli
+c-ares
+ca-certificates
+cairo
+chruby
+clang-format
+cmake
+coreutils
+dav1d
+faiss
+findutils
+flac
+fontconfig
+freetype
+frei0r
+fribidi
+gcc
+gd
+gdbm
+gdk-pixbuf
+gettext
+gh
+giflib
+git
+git-lfs
+glib
+gmp
+gnu-sed
+gnu-tar
+gnupg
+gnutls
+gobject-introspection
+graphite2
+graphviz
+grep
+gts
+guile
+harfbuzz
+highway
+icu4c
+imath
+isl
+jasper
+jemalloc
+jpeg
+jpeg-turbo
+jpeg-xl
+krb5
+lame
+leptonica
+libarchive
+libass
+libassuan
+libavif
+libb2
+libbluray
+libev
+libevent
+libffi
+libgcrypt
+libgpg-error
+libidn2
+libksba
+libmpc
+libnghttp2
+libogg
+libomp
+libpng
+libpthread-stubs
+librsvg
+libsamplerate
+libsndfile
+libsodium
+libsoxr
+libssh2
+libtasn1
+libtermkey
+libtiff
+libtool
+libtorrent-rakshasa
+libunibreak
+libunistring
+libusb
+libuv
+libvidstab
+libvmaf
+libvorbis
+libvpx
+libvterm
+libx11
+libxau
+libxcb
+libxdmcp
+libxext
+libxrender
+libyaml
+little-cms2
+luajit
+luv
+lz4
+lzo
+m4
+make
+mpdecimal
+mpfr
+mpg123
+msgpack
+ncurses
+neovim
+netpbm
+nettle
+nghttp2
+node
+npth
+openblas
+opencore-amr
+openexr
+openjdk@11
+openjpeg
+openssl@1.1
+opus
+p11-kit
+pango
+pcre
+pcre2
+pinentry
+pinentry-mac
+pixman
+pkg-config
+protobuf
+pyenv
+pyenv-virtualenv
+python@3.10
+python@3.9
+rav1e
+rbenv
+readline
+rtmpdump
+rubberband
+ruby
+ruby-build
+ruby-install
+sdl2
+six
+snappy
+speex
+sqlite
+srt
+tcl-tk
+tesseract
+theora
+tmux
+tree-sitter
+unbound
+unibilium
+utf8proc
+webp
+wget
+x264
+x265
+xmlrpc-c
+xorgproto
+xvid
+xz
+zeromq
+zstd
+hammerspoon
+java8

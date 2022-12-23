@@ -13,7 +13,7 @@ path_prepend '/usr/local/pyenv'
 path_prepend '/usr/local/rbenv'
 
 # Rust / Cargo
-# path_prepend "$HOME/.cargo/bin"
+path_prepend "$HOME/.cargo/bin"
 
 # CrossPack
 # path_append '/usr/local/CrossPack-AVR/bin'
