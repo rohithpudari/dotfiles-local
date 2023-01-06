@@ -37,6 +37,11 @@ Host samba
     user rpudari
     HostName flames.eecg.utoronto.ca
 
+# CS teaching server
+Host ta
+    user t3pudari
+    HostName teach.cs.utoronto.ca
+
 # other
 Host github
     User git

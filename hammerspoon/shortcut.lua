@@ -32,8 +32,11 @@ hs.hotkey.bind(hyper, "return", openPrivateBrowser)
 -- Hyper+` Brings up Hammerspoon console
 hs.hotkey.bind(hyper, "`", function() hs.openConsole() end)
 
+-- Launch or Focus Mail
+hs.hotkey.bind(hyper, "m", function() hs.application.launchOrFocus("Mail") end)
+
 -- Launch or Focus Activity Monitor
-hs.hotkey.bind(hyper, "m", function() hs.application.launchOrFocus("Activity Monitor") end)
+hs.hotkey.bind(hyper, "a", function() hs.application.launchOrFocus("Activity Monitor") end)
 
 -- Launch or Focus Activity Monitor
 hs.hotkey.bind(hyper, "s", function() hs.application.launchOrFocus("Slack") end)
