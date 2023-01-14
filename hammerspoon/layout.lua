@@ -18,22 +18,26 @@ layoutOffice = function()
   if ide then
     right = {{ide, nil, RIGHT_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
     left = {
-      {'Safari', nil, MAIN_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true},
-      {'Slack', nil, MAIN_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true},
-      {'Mail', nil, MAIN_MONITOR, u(0,0,1,1), nil, nil, visible=true}
+      {'Slack', nil, MAIN_MONITOR, u(0.5, 0, 0.5, 1), nil, nil, visible=true},
+      {'Mail', nil, MAIN_MONITOR, u(0,0,0.5,1), nil, nil, visible=true},
+      {'Zoom', nil, MAIN_MONITOR, u(0,0,1,1), nil, nil, visible=true}
     }
   else
-    right = {{'Mail',nil, RIGHT_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
-    left = {{'Safari', nil, MAIN_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
+    right = {{'Safari',nil, RIGHT_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
+    left = {
+      {'Slack', nil, MAIN_MONITOR, u(0.5, 0, 0.5, 1), nil, nil, visible=true},
+      {'Mail', nil, MAIN_MONITOR, u(0,0,0.5,1), nil, nil, visible=true},
+      {'Zoom', nil, MAIN_MONITOR, u(0,0,1,1), nil, nil, visible=true}
+    }
   end
-  local mb = {
-    {'Things', nil, MACBOOK_MONITOR, u(0, 0, 1/2, 1), nil, nil, visible=true},
-    {'Calendar', nil, MACBOOK_MONITOR, u(1/2, 0, 1/2, 1), nil, nil, visible=true},
-    -- {'Slack', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true},
-    -- {'Mail', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=false},
-    {'Spotify', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=false}
-  }
-  return ide, concat(left, right, mb)
+  -- local mb = {
+  --   {'Things', nil, MACBOOK_MONITOR, u(0, 0, 1/2, 1), nil, nil, visible=true},
+  --   {'Calendar', nil, MACBOOK_MONITOR, u(1/2, 0, 1/2, 1), nil, nil, visible=true},
+  --   -- {'Slack', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true},
+  --   -- {'Mail', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=false},
+  --   {'Spotify', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=false}
+  -- }
+  return ide, concat(left, right)
 end
 
 layoutHome = function()
@@ -43,13 +47,19 @@ layoutHome = function()
   if ide then
     right = {{ide, nil, HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
     left = {
-      {'Safari', nil, HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true},
-      {'Slack', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true},
-      {'Mail', nil, MACBOOK_MONITOR, u(0,0,1,1), nil, nil, visible=true}
+      {'Slack', nil, MACBOOK_MONITOR, u(0.5, 0, 0.5, 1), nil, nil, visible=true},
+      {'Mail', nil, MACBOOK_MONITOR, u(0,0,0.5,1), nil, nil, visible=true},
+      {'Zoom', nil, HOME_MONITOR, u(0,0,1,1), nil, nil, visible=true}
     }
   else
-    right = {{'Safari',nil, HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
-    left = {{'Mail', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
+    right = {
+      {'Safari',nil, HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true},
+      {'Zoom', nil, HOME_MONITOR, u(0,0,1,1), nil, nil, visible=true}
+    }
+    left = {      
+      {'Slack', nil, MACBOOK_MONITOR, u(0.5, 0, 0.5, 1), nil, nil, visible=true},
+      {'Mail', nil, MACBOOK_MONITOR, u(0,0,0.5,1), nil, nil, visible=true}
+  }
   end
   local mb = {
     {'Things', nil, MACBOOK_MONITOR, u(0, 0, 1/2, 1), nil, nil, visible=true},

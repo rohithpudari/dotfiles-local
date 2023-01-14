@@ -10,5 +10,5 @@ IDEs = {
   'Obsidian',
   'BibDesk',
   'Terminal',
-  'Zoom'
+  'Safari'
 }
