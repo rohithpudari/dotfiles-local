@@ -7,8 +7,6 @@ Include ~/.ssh/config_extra
 Host *
     ServerAliveInterval 120
 
-# UofT ECE
-
 # password server
 Host picton
     user rpudari
@@ -41,6 +39,11 @@ Host samba
 Host ta
     user t3pudari
     HostName teach.cs.utoronto.ca
+
+# compute canada
+ Host ccdb
+     User rpudari
+     HostName cedar.computecanada.ca
 
 # other
 Host github
