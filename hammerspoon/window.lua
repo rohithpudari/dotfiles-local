@@ -1,8 +1,8 @@
 -- half of screen
-hs.hotkey.bind('cmd', 'left', function() hs.window.focusedWindow():moveToUnit({0, 0, 0.5, 1}) end)
-hs.hotkey.bind('cmd', 'right', function() hs.window.focusedWindow():moveToUnit({0.5, 0, 0.5, 1}) end)
-hs.hotkey.bind('cmd', 'up', function() hs.window.focusedWindow():moveToUnit({0, 0, 1, 0.5}) end)
-hs.hotkey.bind('cmd', 'down', function() hs.window.focusedWindow():moveToUnit({0, 0.5, 1, 0.5}) end)
+hs.hotkey.bind('alt', 'left', function() hs.window.focusedWindow():moveToUnit({0, 0, 0.5, 1}) end)
+hs.hotkey.bind('alt', 'right', function() hs.window.focusedWindow():moveToUnit({0.5, 0, 0.5, 1}) end)
+hs.hotkey.bind('alt', 'up', function() hs.window.focusedWindow():moveToUnit({0, 0, 1, 0.5}) end)
+hs.hotkey.bind('alt', 'down', function() hs.window.focusedWindow():moveToUnit({0, 0.5, 1, 0.5}) end)
 
 -- quarter of screen
 hs.hotkey.bind(mod, 'left', function() hs.window.focusedWindow():moveToUnit({0, 0, 0.5, 0.5}) end)
