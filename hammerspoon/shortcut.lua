@@ -21,7 +21,7 @@ hs.hotkey.bind(hyper, ',', function() systemKey('SOUND_DOWN') end)
 hs.hotkey.bind(hyper, '0', function() systemKey('MUTE') end)
 
 -- ⌘ + ⏎ Opens New Terminal
-hs.hotkey.bind(hyper, "t", function() hs.application.launchOrFocus("Terminal") end) 
+-- hs.hotkey.bind(hyper, "t", function() hs.application.launchOrFocus("Terminal") end) 
 
 -- ⌘ + ⇧ + ⏎ Opens New Browser Window
 hs.hotkey.bind(hyper, "space", function() hs.application.launchOrFocus("Safari") end)
@@ -50,8 +50,8 @@ hs.hotkey.bind(hyper, "v", function() hs.application.launchOrFocus("Visual Studi
 -- Hyper+O opens obsidian
 hs.hotkey.bind(hyper, "o", function() hs.application.launchOrFocus("Obsidian") end)
 
---Hyper+B opens BibDesk
-hs.hotkey.bind(hyper, "b", function() hs.application.launchOrFocus("BibDesk") end)
+--Hyper+B opens zotero
+hs.hotkey.bind(hyper, "b", function() hs.application.launchOrFocus("Zotero") end)
 
 --Hyper+Z opens Zoom
 hs.hotkey.bind(hyper, "z", function() hs.application.launchOrFocus("zoom.us") end)
