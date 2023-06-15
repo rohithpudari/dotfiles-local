@@ -18,6 +18,7 @@ Branch Hierarchy
 
 ```
 mac - includes MacOS configuration files
+linux-server - includes linux servers specific configuration files
 ```
 
 License
