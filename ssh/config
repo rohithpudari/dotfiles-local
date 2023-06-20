@@ -35,15 +35,26 @@ Host samba
     user rpudari
     HostName flames.eecg.utoronto.ca
 
-# CS teaching server
-Host ta
-    user t3pudari
-    HostName teach.cs.utoronto.ca
-
 # compute canada
- Host ccdb
+ Host cedar
      User rpudari
      HostName cedar.computecanada.ca
+
+ Host beluga
+     User rpudari
+     HostName beluga.computecanada.ca
+
+ Host graham
+     User rpudari
+     HostName graham.computecanada.ca
+
+ Host narval
+     User rpudari
+     HostName narval.computecanada.ca
+
+ Host niagara
+     User rpudari
+     HostName niagara.computecanada.ca
 
 # other
 Host github
