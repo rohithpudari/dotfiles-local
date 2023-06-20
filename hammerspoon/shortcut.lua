@@ -21,7 +21,7 @@ hs.hotkey.bind(hyper, ',', function() systemKey('SOUND_DOWN') end)
 hs.hotkey.bind(hyper, '0', function() systemKey('MUTE') end)
 
 -- ⌘ + ⏎ Opens New Terminal
--- hs.hotkey.bind(hyper, "t", function() hs.application.launchOrFocus("Terminal") end) 
+hs.hotkey.bind(hyper, "t", function() hs.application.launchOrFocus("Terminal") end) 
 
 -- ⌘ + ⇧ + ⏎ Opens New Browser Window
 hs.hotkey.bind(hyper, "space", function() hs.application.launchOrFocus("Safari") end)
