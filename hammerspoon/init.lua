@@ -1,5 +1,5 @@
-hyper = {"ctrl", "alt", "cmd"}
 mod = {"ctrl", "cmd"}
+hyper = {"ctrl", "alt", "cmd"}
 
 require('lib')
 require('config')
