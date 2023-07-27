@@ -37,4 +37,4 @@ hs.grid.setMargins({w = 0, h = 0})
 hs.hotkey.bind(hyper, 'g', hs.grid.show)
 
 -- auto layout
-hs.hotkey.bind(hyper, 'L', function() autoLayout() end)
+hs.hotkey.bind(hyper, 'l', function() autoLayout() end)
