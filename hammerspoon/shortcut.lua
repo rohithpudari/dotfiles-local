@@ -56,8 +56,8 @@ hs.hotkey.bind(hyper, "b", function() hs.application.launchOrFocus("Zotero") end
 --Hyper+Z opens Zoom
 hs.hotkey.bind(hyper, "z", function() hs.application.launchOrFocus("zoom.us") end)
 
--- --Hyper+I opens Music
--- hs.hotkey.bind(hyper, "I", function() hs.application.launchOrFocus("Music") end)
+--Hyper+D opens OneDrive 
+hs.hotkey.bind(hyper, "D", function() hs.application.launchOrFocus("OneDrive") end)
 
 -- Ctrl+Cmd + Escape -- Sleeps the Computer
 hs.hotkey.bind(mod, "escape", function() hs.caffeinate.systemSleep() end)
