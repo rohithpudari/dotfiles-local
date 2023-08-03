@@ -42,7 +42,7 @@ hs.hotkey.bind(hyper, "a", function() hs.application.launchOrFocus("Activity Mon
 hs.hotkey.bind(hyper, "s", function() hs.application.launchOrFocus("Slack") end)
 
 -- Hyper+F makes toggles app zoom
--- hs.hotkey.bind(hyper, "f", function() hs.application.launchOrFocus("Finder") end)
+--hs.hotkey.bind(hyper, "f", function() hs.application.launchOrFocus("Finder") end)
 
 -- Hyper+C opens VS Code
 hs.hotkey.bind(hyper, "v", function() hs.application.launchOrFocus("Visual Studio Code") end)
@@ -51,7 +51,7 @@ hs.hotkey.bind(hyper, "v", function() hs.application.launchOrFocus("Visual Studi
 hs.hotkey.bind(hyper, "o", function() hs.application.launchOrFocus("Obsidian") end)
 
 --Hyper+B opens zotero
-hs.hotkey.bind(hyper, "b", function() hs.application.launchOrFocus("Zotero") end)
+hs.hotkey.bind(mod, "b", function() hs.application.launchOrFocus("Zotero") end)
 
 --Hyper+Z opens Zoom
 hs.hotkey.bind(hyper, "z", function() hs.application.launchOrFocus("zoom.us") end)
