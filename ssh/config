@@ -56,6 +56,13 @@ Host samba
      User rpudari
      HostName niagara.computecanada.ca
 
+# world of code
+Host woc
+	Hostname da0.eecs.utk.edu
+	Port 443
+	User rpudari
+    IdentityFile ~/.ssh/woc
+
 # other
 Host github
     User git
