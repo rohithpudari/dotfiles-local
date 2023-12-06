@@ -57,10 +57,16 @@ hs.hotkey.bind(mod, "b", function() hs.application.launchOrFocus("Zotero") end)
 hs.hotkey.bind(hyper, "z", function() hs.application.launchOrFocus("zoom.us") end)
 
 --Hyper+D opens OneDrive 
-hs.hotkey.bind(hyper, "D", function() hs.application.launchOrFocus("OneDrive") end)
+hs.hotkey.bind(hyper, "d", function() hs.application.launchOrFocus("OneDrive") end)
+
+--Hyper+c opens chrome 
+hs.hotkey.bind(hyper, "c", function() hs.application.launchOrFocus("Google Chrome") end)
+
+--Hyper+D opens OneDrive 
+hs.hotkey.bind(hyper, "1", function() hs.application.launchOrFocus("Music") end)
 
 -- Ctrl+Cmd + Escape -- Sleeps the Computer
 hs.hotkey.bind(mod, "escape", function() hs.caffeinate.systemSleep() end)
 
 -- Ctrl+Cmd+Alt + P -- Toggle Caps Lock -- do again to toggle off
-hs.hotkey.bind(hyper, "P", function() hs.hid.capslock.toggle() end)
+hs.hotkey.bind(hyper, "p", function() hs.hid.capslock.toggle() end)
