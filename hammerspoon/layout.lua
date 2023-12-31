@@ -3,6 +3,7 @@ local u = hs.geometry.unitrect
 local detectIDE = function()
   local ide = nil
   for _, v in ipairs(IDEs) do
+    print(hs.application.get('Code'))
     if hs.application.get(v) then
       ide = v
       break
@@ -30,13 +31,12 @@ layoutOffice = function()
       {'Zoom', nil, MAIN_MONITOR, u(0,0,1,1), nil, nil, visible=true}
     }
   end
-  -- local mb = {
-  --   {'Things', nil, MACBOOK_MONITOR, u(0, 0, 1/2, 1), nil, nil, visible=true},
-  --   {'Calendar', nil, MACBOOK_MONITOR, u(1/2, 0, 1/2, 1), nil, nil, visible=true},
-  --   -- {'Slack', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true},
-  --   -- {'Mail', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=false},
-  --   {'Spotify', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=false}
-  -- }
+  local mb = {
+    {'Calendar', nil, MACBOOK_MONITOR, u(1/2, 0, 1/2, 1), nil, nil, visible=true},
+    {'Slack', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true},
+    {'Mail', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=false},
+    {'Spotify', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=false}
+  }
   return ide, concat(left, right)
 end
 
@@ -45,28 +45,28 @@ layoutHome = function()
   local right
   local left
   if ide then
-    right = {{ide, nil, HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
-    left = {
-      {'Slack', nil, MACBOOK_MONITOR, u(0.5, 0, 0.5, 1), nil, nil, visible=true},
-      {'Mail', nil, MACBOOK_MONITOR, u(0,0,0.5,1), nil, nil, visible=true},
-      {'Zoom', nil, HOME_MONITOR, u(0,0,1,1), nil, nil, visible=true}
+    left = {{ide, nil, HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
+    right = {
+      {'Safari', nil, HOME_MONITOR2, u(0, 0, 1/2, 1), nil, nil, visible=true},
+      {'Chrome', nil, HOME_MONITOR2, u(0,0,1/2,1), nil, nil, visible=true},
+      {'Zotero', nil, HOME_MONITOR2, u(0, 0, 1, 1), nil, nil, visible=true},
+      {'Zoom', nil, HOME_MONITOR2, u(0, 0, 1, 1), nil, nil, visible=true},
+      {'Terminal', nil, HOME_MONITOR2, u(1/2, 0, 1/2, 1), nil, nil, visible=true},
     }
   else
     right = {
-      {'Safari',nil, HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true},
-      {'Zoom', nil, HOME_MONITOR, u(0,0,1,1), nil, nil, visible=true}
-    }
-    left = {      
-      {'Slack', nil, MACBOOK_MONITOR, u(0.5, 0, 0.5, 1), nil, nil, visible=true},
-      {'Mail', nil, MACBOOK_MONITOR, u(0,0,0.5,1), nil, nil, visible=true}
+      {'Zotero', nil, HOME_MONITOR, u(0, 0, 1/2, 1), nil, nil, visible=true},
+      {'Terminal', nil, HOME_MONITOR, u(0, 1/2, 1, 1/2), nil, nil, visible=true}
   }
+    left = {
+      {'Safari', nil, HOME_MONITOR2, u(0, 0, 1, 1), nil, nil, visible=true},
+      {'Zoom', nil, HOME_MONITOR2, u(0,0,1,1), nil, nil, visible=true}
+    }
   end
   local mb = {
-    {'Things', nil, MACBOOK_MONITOR, u(0, 0, 1/2, 1), nil, nil, visible=true},
-    {'Calendar', nil, MACBOOK_MONITOR, u(1/2, 0, 1/2, 1), nil, nil, visible=true},
-    {'Slack', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true},
-    {'Mail', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=false},
-    {'Spotify', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=false}
+    {'Mail', nil, MACBOOK_MONITOR, u(0, 0, 1/2, 1), nil, nil, visible=true},
+    {'Slack', nil, MACBOOK_MONITOR, u(1/2, 0, 1/2, 1), nil, nil, visible=true},
+    {'Music', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil, visible=false}
   }
   return ide, concat(left, right, mb)
 end
@@ -76,9 +76,7 @@ layoutLaptop = {
   {'Slack', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil},
   {'Safari', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil},
   {'Mail', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil},
-  {'Spotify', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil},
-  {'Things', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil},
-  {'iTerm2', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil},
+  {'Music', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil},
   {'Zoom', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil}
 }
 
