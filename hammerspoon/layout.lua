@@ -3,7 +3,6 @@ local u = hs.geometry.unitrect
 local detectIDE = function()
   local ide = nil
   for _, v in ipairs(IDEs) do
-    print(hs.application.get('Code'))
     if hs.application.get(v) then
       ide = v
       break
@@ -46,16 +45,26 @@ layoutHome = function()
   local left
   if ide then
     left = {{ide, nil, HOME_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
-    right = {
-      {'Safari', nil, HOME_MONITOR2, u(0, 0, 1/2, 1), nil, nil, visible=true},
-      {'Chrome', nil, HOME_MONITOR2, u(0,0,1/2,1), nil, nil, visible=true},
-      {'Zotero', nil, HOME_MONITOR2, u(0, 0, 1, 1), nil, nil, visible=true},
-      {'Zoom', nil, HOME_MONITOR2, u(0, 0, 1, 1), nil, nil, visible=true},
-      {'Terminal', nil, HOME_MONITOR2, u(1/2, 0, 1/2, 1), nil, nil, visible=true},
-    }
+    if hs.application.get('Terminal') then
+      right = {
+        {'Safari', nil, HOME_MONITOR2, u(0, 0, 1/2, 1), nil, nil, visible=true},
+        {'Chrome', nil, HOME_MONITOR2, u(0,0,1/2,1), nil, nil, visible=true},
+        {'Zotero', nil, HOME_MONITOR2, u(0, 0, 1, 1), nil, nil, visible=true},
+        {'Zoom', nil, HOME_MONITOR2, u(0, 0, 1, 1), nil, nil, visible=true},
+        {'Terminal', nil, HOME_MONITOR2, u(1/2, 0, 1/2, 1), nil, nil, visible=true}
+      }
+      else
+        right = {
+          {'Safari', nil, HOME_MONITOR2, u(0, 0, 1, 1), nil, nil, visible=true},
+          {'Chrome', nil, HOME_MONITOR2, u(0,0,1,1), nil, nil, visible=true},
+          {'Zotero', nil, HOME_MONITOR2, u(0, 0, 1, 1), nil, nil, visible=true},
+          {'Zoom', nil, HOME_MONITOR2, u(0, 0, 1, 1), nil, nil, visible=true},
+        }
+      end
   else
     right = {
       {'Zotero', nil, HOME_MONITOR, u(0, 0, 1/2, 1), nil, nil, visible=true},
+      {'Finder', nil, HOME_MONITOR, u(1/2, 0, 1/2, 1), nil, nil, visible=true},
       {'Terminal', nil, HOME_MONITOR, u(0, 1/2, 1, 1/2), nil, nil, visible=true}
   }
     left = {
