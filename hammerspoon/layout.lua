@@ -64,7 +64,7 @@ layoutHome = function()
   else
     right = {
       {'Zotero', nil, HOME_MONITOR, u(0, 0, 1/2, 1), nil, nil, visible=true},
-      {'Finder', nil, HOME_MONITOR, u(1/2, 0, 1/2, 1), nil, nil, visible=true},
+      {'Finder', nil, HOME_MONITOR, u(0, 0, 1, 1/2), nil, nil, visible=true},
       {'Terminal', nil, HOME_MONITOR, u(0, 1/2, 1, 1/2), nil, nil, visible=true}
   }
     left = {
