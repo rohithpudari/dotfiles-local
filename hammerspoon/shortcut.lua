@@ -4,9 +4,9 @@ function systemKey(key)
 end
 
 function openPrivateBrowser()
-  k = hs.application.find("Safari")
-  hs.application.open("Safari")
-  k:selectMenuItem("New Private Window")
+  k = hs.application.find("Google Chrome")
+  hs.application.open("Google Chrome")
+  k:selectMenuItem("New Incognito Window")
 end
 
 -- lock screen by starting lock screen
@@ -24,7 +24,7 @@ hs.hotkey.bind(hyper, '0', function() systemKey('MUTE') end)
 hs.hotkey.bind(hyper, "t", function() hs.application.launchOrFocus("Terminal") end) 
 
 -- ⌘ + ⇧ + ⏎ Opens New Browser Window
-hs.hotkey.bind(hyper, "space", function() hs.application.launchOrFocus("Safari") end)
+hs.hotkey.bind(hyper, "space", function() hs.application.launchOrFocus("Google Chrome") end)
 
 -- ⌘ + ⇧ + ⏎ Opens New private Browser Window
 hs.hotkey.bind(hyper, "return", openPrivateBrowser)
@@ -59,8 +59,6 @@ hs.hotkey.bind(hyper, "z", function() hs.application.launchOrFocus("zoom.us") en
 --Hyper+D opens OneDrive 
 hs.hotkey.bind(hyper, "d", function() hs.application.launchOrFocus("OneDrive") end)
 
---Hyper+c opens chrome 
-hs.hotkey.bind(hyper, "c", function() hs.application.launchOrFocus("Google Chrome") end)
 
 --Hyper+D opens OneDrive 
 hs.hotkey.bind(hyper, "1", function() hs.application.launchOrFocus("Music") end)
