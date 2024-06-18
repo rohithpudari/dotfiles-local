@@ -61,7 +61,6 @@ Host woc
 	Hostname da0.eecs.utk.edu
 	Port 443
 	User rpudari
-    IdentityFile ~/.ssh/woc
 
 # other
 Host github
