@@ -62,6 +62,8 @@ defaults write com.apple.touchbar.agent PresentationModeGlobal fullControlStrip
 # Third-party apps
 ##################
 
+## Chrome
+defaults write com.google.Chrome BuiltInDnsClientEnabled -bool false
 
 ## GPGTools
 ###########
