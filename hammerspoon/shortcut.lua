@@ -57,8 +57,12 @@ hs.hotkey.bind(mod, "b", function() hs.application.launchOrFocus("Zotero") end)
 hs.hotkey.bind(hyper, "z", function() hs.application.launchOrFocus("zoom.us") end)
 
 --Hyper+D opens OneDrive 
-hs.hotkey.bind(hyper, "d", function() hs.application.launchOrFocus("OneDrive") end)
-
+hs.hotkey.bind(hyper, "d", function() 
+  hs.application.launchOrFocus("Mail")
+  hs.application.launchOrFocus("Slack")
+  hs.application.launchOrFocus("Chrome")
+  autoLayout()
+end)
 
 --Hyper+D opens OneDrive 
 hs.hotkey.bind(hyper, "1", function() hs.application.launchOrFocus("Music") end)

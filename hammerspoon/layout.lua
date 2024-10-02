@@ -80,6 +80,27 @@ layoutHome = function()
   return ide, concat(left, right, mb)
 end
 
+layoutHome2 = function()
+  local right
+  local left
+  right = {
+    {'Mail', nil, HOME_MONITOR, u(0, 0, 1, 1/2), nil, nil, visible=true},
+    {'Slack', nil, HOME_MONITOR, u(0, 1/2, 1, 1/2), nil, nil, visible=true},
+    {'Code', nil, RIGHT_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true},
+  }
+  left = {
+    {'Chrome', nil, HOME_MONITOR2, u(0, 0, 1, 1), nil, nil, visible=true},
+    {'Zoom', nil, HOME_MONITOR2, u(0,0,1,1), nil, nil, visible=true}
+  }
+  if hs.application.get('Terminal') then
+    left = {
+    {'Terminal', nil, HOME_MONITOR2, u(0, 0, 1/2, 1), nil, nil, visible=true},
+    {'Chrome', nil, HOME_MONITOR2, u(1/2, 0, 1/2, 1), nil, nil, visible=true}
+  }
+  end
+  return concat(left, right)
+end
+
 layoutLaptop = {
   {'Calendar', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil},
   {'Slack', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil},
@@ -139,7 +160,12 @@ autoLayout = function()
       local ide, layout = layoutHome()
       local name = ide or 'Terminal'
       local description = 'Home (' .. name .. ')'
-      applyLayout(description, layout) 
+      applyLayout(description, layout)
+  elseif hasScreen(HOME_MONITOR) and hasScreen(HOME_MONITOR2) then
+    local layout = layoutHome2()
+    local name = 'two monitors'
+    local description = 'HomeScreen (' .. name .. ')'
+    applyLayout(description, layout)
   elseif #hs.screen.allScreens() == 1 then
     applyLayout('Laptop', layoutLaptop)
   end
