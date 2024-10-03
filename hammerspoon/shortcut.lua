@@ -60,7 +60,7 @@ hs.hotkey.bind(hyper, "z", function() hs.application.launchOrFocus("zoom.us") en
 hs.hotkey.bind(hyper, "d", function() 
   hs.application.launchOrFocus("Mail")
   hs.application.launchOrFocus("Slack")
-  hs.application.launchOrFocus("Chrome")
+  hs.application.launchOrFocus("Google Chrome")
   autoLayout()
 end)
 
