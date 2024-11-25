@@ -1,5 +1,5 @@
 # autojump config
-[[ -s /usr/share/autojump/autojump.sh ]] && source /usr/share/autojump/autojump.sh
+[[ -s /fs1/eecg/shuruizgrp/rpudari/.autojump/etc/profile.d/autojump.sh ]] && source /fs1/eecg/shuruizgrp/rpudari/.autojump/etc/profile.d/autojump.sh
 
 # PATH
 path_prepend "$HOME/bin"
@@ -21,3 +21,16 @@ ldfu() {
         cd ~/.dotfiles_local && git pull --ff-only && ./install -q
     )
 }
+
+# pyenv path
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# make backspace work in tmux
+stty erase "^?"
+
+# java paths
+alias java17='/usr/lib/jvm/jdk-17-oracle-x64/bin/java '
+alias java8='/usr/lib/jvm/jdk1.8.0_421/bin/java '
+alias javac8='javac -source 1.8 -target 1.8 '
