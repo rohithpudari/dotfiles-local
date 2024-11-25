@@ -1,9 +1,10 @@
 [user]
 	name = Rohith Pudari
+    signingkey = 5B2EB0EF357F94FA
 	email = 27728974+rohithpudari@users.noreply.github.com
 
 [github]
 	user = rohithpudari
 
-[commit]
-    gpgsign = false
+[gpg]
+    program = /usr/bin/gpg
