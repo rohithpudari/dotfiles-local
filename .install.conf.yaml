@@ -13,6 +13,7 @@
     ~/.gitconfig_local:
     ~/.hammerspoon:
     ~/.name:
+    ~/.gnupg/gpg-agent.conf: gpg-agent.conf
     ~/.shell_local_after:
     ~/.shell_local_before:
     ~/.ssh/config: ssh/config

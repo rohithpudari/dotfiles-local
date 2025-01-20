@@ -63,6 +63,7 @@ Host woc
 	User rpudari
 
 # other
-Host github
+Host github.com
     User git
     HostName github.com
+    IdentitiesOnly yes

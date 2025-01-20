@@ -15,6 +15,9 @@ defaults write com.apple.dock show-recents -bool false
 # set the icon size of Dock items
 defaults write com.apple.dock tilesize -int 50
 
+# set finder to show all files
+defaults write com.apple.finder AppleShowAllFiles true
+
 # disable keyboard press and hold popup
 defaults write -g ApplePressAndHoldEnabled -bool false
 
@@ -62,8 +65,6 @@ defaults write com.apple.touchbar.agent PresentationModeGlobal fullControlStrip
 # Third-party apps
 ##################
 
-## Chrome
-defaults write com.google.Chrome BuiltInDnsClientEnabled -bool false
 
 ## GPGTools
 ###########
