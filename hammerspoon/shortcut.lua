@@ -3,11 +3,11 @@ function systemKey(key)
   hs.eventtap.event.newSystemKeyEvent(key, false):post()
 end
 
-function openPrivateBrowser()
-  k = hs.application.find("Google Chrome")
-  hs.application.open("Google Chrome")
-  k:selectMenuItem("New Incognito Window")
-end
+-- function openPrivateBrowser()
+--  k = hs.application.find("Google Chrome")
+--  hs.application.open("Google Chrome")
+--  k:selectMenuItem("New Incognito Window")
+-- end
 
 -- lock screen by starting lock screen
 hs.hotkey.bind(hyper, 'q', function() hs.caffeinate.lockScreen() end)
@@ -21,13 +21,13 @@ hs.hotkey.bind(hyper, ',', function() systemKey('SOUND_DOWN') end)
 hs.hotkey.bind(hyper, '0', function() systemKey('MUTE') end)
 
 -- ⌘ + ⏎ Opens New Terminal
-hs.hotkey.bind(hyper, "t", function() hs.application.launchOrFocus("Terminal") end) 
+hs.hotkey.bind(hyper, "t", function() hs.application.launchOrFocus("iTerm") end) 
 
 -- ⌘ + ⇧ + ⏎ Opens New Browser Window
-hs.hotkey.bind(hyper, "space", function() hs.application.launchOrFocus("Google Chrome") end)
+hs.hotkey.bind(hyper, "space", function() hs.application.launchOrFocus("Firefox") end)
 
 -- ⌘ + ⇧ + ⏎ Opens New private Browser Window
-hs.hotkey.bind(hyper, "return", openPrivateBrowser)
+-- hs.hotkey.bind(hyper, "return", openPrivateBrowser)
 
 -- Hyper+` Brings up Hammerspoon console
 hs.hotkey.bind(hyper, "`", function() hs.openConsole() end)
@@ -60,12 +60,12 @@ hs.hotkey.bind(hyper, "z", function() hs.application.launchOrFocus("zoom.us") en
 hs.hotkey.bind(hyper, "d", function() 
   hs.application.launchOrFocus("Mail")
   hs.application.launchOrFocus("Slack")
-  hs.application.launchOrFocus("Google Chrome")
+  hs.application.launchOrFocus("Firefox")
   autoLayout()
 end)
 
 --Hyper+D opens OneDrive 
-hs.hotkey.bind(hyper, "1", function() hs.application.launchOrFocus("Music") end)
+-- hs.hotkey.bind(hyper, "1", function() hs.application.launchOrFocus("Music") end)
 
 -- Ctrl+Cmd + Escape -- Sleeps the Computer
 hs.hotkey.bind(mod, "escape", function() hs.caffeinate.systemSleep() end)
