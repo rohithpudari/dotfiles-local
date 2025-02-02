@@ -62,6 +62,11 @@ Host woc
 	Port 443
 	User rpudari
 
+# torrent-gpu server
+Host gpu
+    User rpudari
+    Hostname forcolab.csl.toronto.edu
+
 # other
 Host github.com
     User git

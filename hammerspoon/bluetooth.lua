@@ -10,8 +10,7 @@ end
 
 function bluetooth(power)
     local living_speaker = "7c-d9-5c-84-16-d7"
-    -- /usr/local/bin for Intel Macs, and /opt/homebrew/bin for M1 Macs
-    local t = hs.task.new("/usr/local/bin/blueutil", checkBluetoothResult, {"--disconnect", living_speaker})
+    local t = hs.task.new("/opt/homebrew/bin/blueutil", checkBluetoothResult, {"--disconnect", living_speaker})
     t:start()
 end
 
@@ -21,5 +20,4 @@ function f(event)
   end
 end
 
-watcher = hs.caffeinate.watcher.new(bluetooth)
-watcher:start()
+hs.caffeinate.watcher.new(bluetooth):start()

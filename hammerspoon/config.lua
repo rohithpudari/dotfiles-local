@@ -1,4 +1,4 @@
-MACBOOK_MONITOR = 'Built-in Retina Display'
+MACBOOK_MONITOR = 'Built-in Display'
 
 RIGHT_MONITOR = 'KB272HL'
 MAIN_MONITOR = 'DELL SE2722H'

@@ -20,10 +20,10 @@ layoutOffice = function()
     left = {
       {'Slack', nil, MAIN_MONITOR, u(0.5, 0, 0.5, 1), nil, nil, visible=true},
       {'Mail', nil, MAIN_MONITOR, u(0,0,0.5,1), nil, nil, visible=true},
-      {'Zoom', nil, MAIN_MONITOR, u(0,0,1,1), nil, nil, visible=true}
+      {'zoom.us', nil, MAIN_MONITOR, u(0,0,1,1), nil, nil, visible=true}
     }
   else
-    right = {{'Safari',nil, RIGHT_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
+    right = {{'Firefox',nil, RIGHT_MONITOR, u(0, 0, 1, 1), nil, nil, visible=true}}
     left = {
       {'Slack', nil, MAIN_MONITOR, u(0.5, 0, 0.5, 1), nil, nil, visible=true},
       {'Mail', nil, MAIN_MONITOR, u(0,0,0.5,1), nil, nil, visible=true},
@@ -48,17 +48,17 @@ layoutHome = function()
     if hs.application.get('Terminal') then
       right = {
         {'Safari', nil, HOME_MONITOR2, u(0, 0, 1/2, 1), nil, nil, visible=true},
-        {'Chrome', nil, HOME_MONITOR2, u(0,0,1/2,1), nil, nil, visible=true},
+        {'Firefox', nil, HOME_MONITOR2, u(0,0,1/2,1), nil, nil, visible=true},
         {'Zotero', nil, HOME_MONITOR2, u(0, 0, 1, 1), nil, nil, visible=true},
-        {'Zoom', nil, HOME_MONITOR2, u(0, 0, 1, 1), nil, nil, visible=true},
+        {'zoom.us', nil, HOME_MONITOR2, u(0, 0, 1, 1), nil, nil, visible=true},
         {'Terminal', nil, HOME_MONITOR2, u(1/2, 0, 1/2, 1), nil, nil, visible=true}
       }
       else
         right = {
           {'Safari', nil, HOME_MONITOR2, u(0, 0, 1, 1), nil, nil, visible=true},
-          {'Chrome', nil, HOME_MONITOR2, u(0,0,1,1), nil, nil, visible=true},
+          {'Firefox', nil, HOME_MONITOR2, u(0,0,1,1), nil, nil, visible=true},
           {'Zotero', nil, HOME_MONITOR2, u(0, 0, 1, 1), nil, nil, visible=true},
-          {'Zoom', nil, HOME_MONITOR2, u(0, 0, 1, 1), nil, nil, visible=true},
+          {'zoom.us', nil, HOME_MONITOR2, u(0, 0, 1, 1), nil, nil, visible=true},
         }
       end
   else
@@ -69,7 +69,7 @@ layoutHome = function()
   }
     left = {
       {'Safari', nil, HOME_MONITOR2, u(0, 0, 1, 1), nil, nil, visible=true},
-      {'Zoom', nil, HOME_MONITOR2, u(0,0,1,1), nil, nil, visible=true}
+      {'zoom.us', nil, HOME_MONITOR2, u(0,0,1,1), nil, nil, visible=true}
     }
   end
   local mb = {
@@ -90,12 +90,12 @@ layoutHome2 = function()
   }
   left = {
     {'Chrome', nil, HOME_MONITOR2, u(0, 0, 1, 1), nil, nil, visible=true},
-    {'Zoom', nil, HOME_MONITOR2, u(0,0,1,1), nil, nil, visible=true}
+    {'zoom.us', nil, HOME_MONITOR2, u(0,0,1,1), nil, nil, visible=true}
   }
   if hs.application.get('Terminal') then
     left = {
     {'Terminal', nil, HOME_MONITOR2, u(0, 0, 1/2, 1), nil, nil, visible=true},
-    {'Chrome', nil, HOME_MONITOR2, u(1/2, 0, 1/2, 1), nil, nil, visible=true}
+    {'Firefox', nil, HOME_MONITOR2, u(1/2, 0, 1/2, 1), nil, nil, visible=true}
   }
   end
   return concat(left, right)
@@ -107,7 +107,7 @@ layoutLaptop = {
   {'Safari', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil},
   {'Mail', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil},
   {'Music', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil},
-  {'Zoom', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil}
+  {'zoom.us', nil, MACBOOK_MONITOR, u(0, 0, 1, 1), nil, nil}
 }
 
 applyLayout = function(name, layout)
