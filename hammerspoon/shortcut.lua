@@ -24,7 +24,7 @@ hs.hotkey.bind(hyper, '0', function() systemKey('MUTE') end)
 hs.hotkey.bind(hyper, "t", function() hs.application.launchOrFocus("iTerm") end) 
 
 -- ⌘ + ⇧ + ⏎ Opens New Browser Window
-hs.hotkey.bind(hyper, "space", function() hs.application.launchOrFocus("Firefox") end)
+hs.hotkey.bind(hyper, "space", function() hs.application.launchOrFocus("LibreWolf") end)
 
 -- ⌘ + ⇧ + ⏎ Opens New private Browser Window
 -- hs.hotkey.bind(hyper, "return", openPrivateBrowser)
@@ -60,7 +60,7 @@ hs.hotkey.bind(hyper, "z", function() hs.application.launchOrFocus("zoom.us") en
 hs.hotkey.bind(hyper, "d", function() 
   hs.application.launchOrFocus("Mail")
   hs.application.launchOrFocus("Slack")
-  hs.application.launchOrFocus("Firefox")
+  hs.application.launchOrFocus("LibreWolf")
   autoLayout()
 end)
 
