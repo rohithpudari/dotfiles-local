@@ -9,6 +9,9 @@ defaults write com.apple.dock autohide -bool true
 # translucent dock icons for hidden apps
 defaults write com.apple.dock showhidden -bool true
 
+# disableaAutomatically rearranging spaces based on most recent use
+defaults write com.apple.dock "mru-spaces" -bool "false"
+
 # hide recent apps
 defaults write com.apple.dock show-recents -bool false
 
