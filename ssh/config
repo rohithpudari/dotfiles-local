@@ -63,9 +63,13 @@ Host woc
 	User rpudari
 
 # torrent-gpu server
-Host gpu
+Host gpulogin
     User rpudari
     Hostname forcolab.csl.toronto.edu
+
+Host gpu
+    User rpudari
+    Hostname h100-dell.csl.toronto.edu
 
 # other
 Host github.com
