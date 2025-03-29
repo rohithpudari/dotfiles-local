@@ -1,0 +1,21 @@
+{
+    "workbench.colorTheme": "Visual Studio Dark",
+    "editor.lineNumbers": "relative",
+    "notebook.lineNumbers": "on",
+    "editor.stickyScroll.maxLineCount": 8,
+    "vim.leader": " ",
+    "vim.smartRelativeLine": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": false,
+    "editor.minimap.enabled": false,
+    "vim.cursorStylePerMode.insert": "line-thin",
+    "vim.cursorStylePerMode.normal": "block",
+    "vim.cursorStylePerMode.visual": "underline",
+    "vim.easymotion": true,
+    "vim.neovimUseConfigFile": true,
+    "vim.neovimPath": "/opt/homebrew/bin/nvim",
+    "vim.shell": "/bin/zsh",
+    "git.openRepositoryInParentFolders": "never",
+    "telemetry.telemetryLevel": "off",
+    "python.analysis.aiCodeActions": {}
+}

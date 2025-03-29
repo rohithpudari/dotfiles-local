@@ -6,4 +6,7 @@ BREW_PREFIX=$(brew --prefix)
 # path_prepend '$BREW_PREFIX/opt/coreutils/libexec/gnubin'
 PATH="$BREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
 path_prepend "$BREW_PREFIX/opt/make/libexec/gnubin"
+
+# pyenv and pyenv-virtualenv initialization
 path_prepend '$BREW_PREFIX/pyenv'
+eval "$(pyenv virtualenv-init -)"
