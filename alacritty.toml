@@ -31,19 +31,33 @@ text = "0x1d2021"
 
 # Default colors
 [colors.primary]
-background = "0x1d2021"
-foreground = "0xd5c4a1"
+background = '#181818'
+foreground = '#d8d8d8'
+
+[colors]
+draw_bold_text_with_bright_colors = true
 
 # Normal colors
 [colors.normal]
-black   = '#282828'
-red     = '#cc241d'
-green   = '#98971a'
-yellow  = '#d79921'
-blue    = '#458588'
-magenta = '#b16286'
-cyan    = '#689d6a'
-white   = '#a89984'
+black   = '#181818'
+red     = '#ab4642'
+green   = '#a1b56c'
+yellow  = '#f7ca88'
+blue    = '#7cafc2'
+magenta = '#ba8baf'
+cyan    = '#86c1b9'
+white   = '#d8d8d8'
+
+# Bright colors
+[colors.bright]
+black   = '#585858'
+red     = '#ab4642'
+green   = '#a1b56c'
+yellow  = '#f7ca88'
+blue    = '#7cafc2'
+magenta = '#ba8baf'
+cyan    = '#86c1b9'
+white   = '#f8f8f8'
 
 
 [font]
@@ -60,10 +74,10 @@ vi_mode_style = "Underline"
 
 [window.dimensions]
 columns = 100
-lines = 30
+lines = 40
 
 [window.padding]
-x = 8
+x = 5
 y = 5
 
 [selection]

@@ -3,11 +3,11 @@ function systemKey(key)
   hs.eventtap.event.newSystemKeyEvent(key, false):post()
 end
 
--- function openPrivateBrowser()
---  k = hs.application.find("Google Chrome")
---  hs.application.open("Google Chrome")
---  k:selectMenuItem("New Incognito Window")
--- end
+function openPrivateBrowser()
+  k = hs.application.find("LibreWolf")
+  hs.application.open("LibreWolf")
+  k:selectMenuItem("New Private Window")
+end
 
 -- lock screen by starting lock screen
 hs.hotkey.bind(hyper, 'q', function() hs.caffeinate.lockScreen() end)
@@ -21,13 +21,13 @@ hs.hotkey.bind(hyper, ',', function() systemKey('SOUND_DOWN') end)
 hs.hotkey.bind(hyper, '0', function() systemKey('MUTE') end)
 
 -- ⌘ + ⏎ Opens New Terminal
-hs.hotkey.bind(hyper, "t", function() hs.application.launchOrFocus("iTerm") end) 
+hs.hotkey.bind(hyper, "t", function() hs.application.launchOrFocus("Alacritty") end) 
 
 -- ⌘ + ⇧ + ⏎ Opens New Browser Window
 hs.hotkey.bind(hyper, "space", function() hs.application.launchOrFocus("LibreWolf") end)
 
 -- ⌘ + ⇧ + ⏎ Opens New private Browser Window
--- hs.hotkey.bind(hyper, "return", openPrivateBrowser)
+hs.hotkey.bind(hyper, "return", openPrivateBrowser)
 
 -- Hyper+` Brings up Hammerspoon console
 hs.hotkey.bind(hyper, "`", function() hs.openConsole() end)
