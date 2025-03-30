@@ -1,4 +1,7 @@
 # Dotfiles (local) [![Build Status](https://github.com/rohithpudari/dotfiles-local/actions/workflows/build.yml/badge.svg)](https://github.com/rohithpudari/dotfiles-local/actions/workflows/build.yml)
+
+This dotfiles are heavily inspired from [Anishathalye dotfiles](https://github.com/anishathalye/dotfiles-local)
+
 After cloning this repo, run `install` to automatically set up the development
 environment. Note that the install script is idempotent - running it multiple
 times has no effect.
@@ -12,14 +15,6 @@ files are organized.
 
 Configuration for specific computers (or groups of computers) is maintained in
 separate branches in this repo.
-
-Branch Hierarchy
-----------------
-
-```
-mac - includes MacOS configuration files
-linux-server - includes linux servers specific configuration files
-```
 
 License
 -------
