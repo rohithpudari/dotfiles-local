@@ -1,4 +1,4 @@
-# Dotfiles (local) [![Build Status](https://github.com/rohithpudari/dotfiles-local/actions/workflows/build.yml/badge.svg)](https://github.com/rohithpudari/dotfiles-local/actions/workflows/build.yml)
+# Dotfiles (local)
 
 This dotfiles are heavily inspired from [Anishathalye dotfiles](https://github.com/anishathalye/dotfiles-local)
 
@@ -19,7 +19,7 @@ separate branches in this repo.
 License
 -------
 
-Copyright (c) 2014-2021 Rohith Pudari. Released under the MIT License. See
+Copyright (c) 2014-2021 Rohith Pudari. Released under the CC0-1.0 License. See
 [LICENSE.md][license] for details.
 
 [dotbot]: https://github.com/anishathalye/dotbot
