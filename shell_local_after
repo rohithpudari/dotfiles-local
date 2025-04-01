@@ -16,12 +16,12 @@ alias gpgsgn='gpg --ask-cert-level --edit-key'
 alias dirs='dirs -v'
 # Push and jump
 pj() {
-    pushd "$(autojump $@)"
+    pushd "$(zoxide $@)"
 }
 
 # Homebrew and Related Tools
 export HOMEBREW_NO_ANALYTICS=1
-[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+# [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 # path_prepend '/usr/local/opt/ruby/bin'
 
 export JUPYTER_PATH="$HOME/.local/share/jupyter"

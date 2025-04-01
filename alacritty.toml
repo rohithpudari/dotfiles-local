@@ -1,5 +1,5 @@
 [env]
-term = "xterm-256color"
+TERM = "xterm-256color"
 
 [[colors.indexed_colors]]
 color = "#fe8019"
@@ -34,9 +34,6 @@ text = "0x1d2021"
 background = '#181818'
 foreground = '#d8d8d8'
 
-[colors]
-draw_bold_text_with_bright_colors = true
-
 # Normal colors
 [colors.normal]
 black   = '#181818'
@@ -58,7 +55,6 @@ blue    = '#7cafc2'
 magenta = '#ba8baf'
 cyan    = '#86c1b9'
 white   = '#f8f8f8'
-
 
 [font]
 size = 15.0

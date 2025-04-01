@@ -10,3 +10,6 @@ path_prepend "$BREW_PREFIX/opt/make/libexec/gnubin"
 # pyenv and pyenv-virtualenv initialization
 path_prepend '$BREW_PREFIX/pyenv'
 eval "$(pyenv virtualenv-init -)"
+
+# zoxide for autojump
+eval "$(zoxide init zsh)"
