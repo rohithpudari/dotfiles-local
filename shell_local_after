@@ -11,6 +11,7 @@ ldfu() {
 }
 
 #aliases
+alias vi=nvim
 alias gpgst='gpg -k --list-options show-uid-validity'
 alias gpgsgn='gpg --ask-cert-level --edit-key'
 alias dirs='dirs -v'
