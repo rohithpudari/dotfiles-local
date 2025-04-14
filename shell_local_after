@@ -4,28 +4,36 @@ path_prepend "$HOME/.dotfiles_local/bin"
 
 # Update local dotfiles
 ldfu() {
-    declare -f dfu > /dev/null && dfu &&
-    (
-        cd ~/.dotfiles_local && git pull --ff-only && ./install -q
-    )
+  declare -f dfu > /dev/null && dfu &&(
+      cd ~/.dotfiles_local && git pull --ff-only && ./install -q
+  )
 }
 
 #aliases
-alias vi=nvim
+alias v=nvim
+
+#gpg related
 alias gpgst='gpg -k --list-options show-uid-validity'
 alias gpgsgn='gpg --ask-cert-level --edit-key'
 alias dirs='dirs -v'
+
+# brew alias
+alias bubo='brew update && brew outdated'
+alias bubc='brew upgrade && brew cleanup'
+alias bu='brew update && brew outdated && brew upgrade && brew cleanup && brew cu'
+alias brewfile='brew bundle dump --force'
+
 # Push and jump
 pj() {
-    pushd "$(zoxide $@)"
+  pushd "$(zoxide query "$@")"
 }
 
 # Homebrew and Related Tools
 export HOMEBREW_NO_ANALYTICS=1
-# [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+export HOMEBREW_AUTO_UPDATE_SECS=86400 # automatically update every 24 hours
 # path_prepend '/usr/local/opt/ruby/bin'
 
-export JUPYTER_PATH="$HOME/.local/share/jupyter"
+# export JUPYTER_PATH="$HOME/.local/share/jupyter"
 
 # OPAM configuration
 # test -r ~/.opam/opam-init/init.zsh && . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

@@ -3,6 +3,7 @@ path_prepend "$HOME/bin"
 # Homebrew and Related Tools
 eval $(/opt/homebrew/bin/brew shellenv)
 BREW_PREFIX=$(brew --prefix)
+
 # path_prepend '$BREW_PREFIX/opt/coreutils/libexec/gnubin'
 PATH="$BREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
 path_prepend "$BREW_PREFIX/opt/make/libexec/gnubin"
