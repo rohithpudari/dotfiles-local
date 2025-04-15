@@ -114,3 +114,13 @@ end)
 hs.hotkey.bind(hyper, "p", function()
 	hs.hid.capslock.toggle()
 end)
+
+-- Alt + Shift + L -- run autLayout function
+hs.hotkey.bind("alt", "shift", "l", function()
+	autoLayout()
+end)
+
+-- Alt + Shift + P -- toggle shortcut pomodoro
+hs.hotkey.bind("alt", "shift", "p", function()
+	hs.shortcut.run("Start Pomodoro")
+end)
