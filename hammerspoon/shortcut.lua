@@ -4,13 +4,11 @@ function systemKey(key)
 end
 
 function openPrivateBrowser()
-	if hs.application.focusedWindow == "Safari" then
-		k = hs.application.find("Safari")
-		k:selectMenuItem("New Private Window")
-	else
-		k = hs.application.launchOrFocus("LibreWolf")
-		k.selectMenuItem("New Private Window")
+	a = hs.application.find("Firefox")
+	if a == nil then
+		hs.application.launchOrFocus("Firefox")
 	end
+	a:selectMenuItem("New Private Window")
 end
 
 -- lock screen by starting lock screen
@@ -45,7 +43,7 @@ end)
 
 -- ⌘ + ⇧ + ⏎ Opens New Browser Window
 hs.hotkey.bind(hyper, "space", function()
-	hs.application.launchOrFocus("LibreWolf")
+	hs.application.launchOrFocus("Firefox")
 end)
 
 -- ⌘ + ⇧ + ⏎ Opens New private Browser Window
@@ -94,16 +92,21 @@ hs.hotkey.bind(hyper, "z", function()
 	hs.application.launchOrFocus("zoom.us")
 end)
 
+--Hyper+p opens Passwords
+hs.hotkey.bind(hyper, "p", function()
+	hs.application.launchOrFocus("Passwords")
+end)
+
 --Hyper+D opens frequently opened apps and does autolayout
 hs.hotkey.bind(hyper, "d", function()
 	hs.application.launchOrFocus("Mail")
 	hs.application.launchOrFocus("Slack")
-	hs.application.launchOrFocus("LibreWolf")
+	hs.application.launchOrFocus("Firefox")
 	autoLayout()
 end)
 
 --Hyper+D opens OneDrive
--- hs.hotkey.bind(hyper, "1", function() hs.application.launchOrFocus("Music") end)
+-- hs.hotkey.bind(hyper, "1", function() hs.applicatFocus("Music") end)
 
 -- Ctrl+Cmd + Escape -- Sleeps the Computer
 hs.hotkey.bind(hyper, "escape", function()
@@ -111,16 +114,16 @@ hs.hotkey.bind(hyper, "escape", function()
 end)
 
 -- Ctrl+Cmd+Alt + P -- Toggle Caps Lock -- do again to toggle off
-hs.hotkey.bind(hyper, "p", function()
-	hs.hid.capslock.toggle()
-end)
+-- hs.hotkey.bind(hyper, "", function()
+--	hs.hid.capslock.toggle()
+-- end)
 
--- Alt + Shift + L -- run autLayout function
-hs.hotkey.bind("alt", "shift", "l", function()
+-- Mod + L -- run autLayout function
+hs.hotkey.bind(mod, "l", function()
 	autoLayout()
 end)
 
--- Alt + Shift + P -- toggle shortcut pomodoro
-hs.hotkey.bind("alt", "shift", "p", function()
-	hs.shortcut.run("Start Pomodoro")
+-- Mod + P -- toggle shortcut pomodoro
+hs.hotkey.bind(mod, "p", function()
+	hs.shortcuts.run("Start Pomodoro")
 end)

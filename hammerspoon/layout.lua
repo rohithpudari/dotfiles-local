@@ -20,11 +20,11 @@ layoutOffice = function()
 		left = {
 			{ "Slack", nil, MAIN_MONITOR, hs.layout.left50, nil, nil, visible = true },
 			{ "Mail", nil, MAIN_MONITOR, hs.layout.right50, nil, nil, visible = true },
-			{ "LibreWolf", nil, MAIN_MONITOR, hs.layout.maximized, nil, nil, visible = true },
+			{ "Firefox", nil, MAIN_MONITOR, hs.layout.maximized, nil, nil, visible = true },
 		}
 	else
 		right = {
-			{ "LibreWolf", nil, RIGHT_MONITOR, hs.layout.maximized, nil, nil, visible = true },
+			{ "Firefox", nil, RIGHT_MONITOR, hs.layout.maximized, nil, nil, visible = true },
 		}
 		left = {
 			{ "Slack", nil, MAIN_MONITOR, hs.layout.left50, nil, nil, visible = true },
@@ -47,7 +47,7 @@ layoutHome = function()
 		left = { { ide, nil, HOME_MONITOR, hs.layout.maximized, nil, nil, visible = true } }
 		right = {
 			{ "Safari", nil, HOME_MONITOR2, hs.layout.maximized, nil, nil, visible = true },
-			{ "LibreWolf", nil, HOME_MONITOR2, hs.layout.maximized, nil, nil, visible = true },
+			{ "Firefox", nil, HOME_MONITOR2, hs.layout.maximized, nil, nil, visible = true },
 			{ "Zotero", nil, HOME_MONITOR2, hs.layout.maximized, nil, nil, visible = true },
 			{ "zoom.us", nil, HOME_MONITOR2, hs.layout.maximized, nil, nil, visible = true },
 		}
@@ -58,7 +58,7 @@ layoutHome = function()
 		}
 		left = {
 			{ "Safari", nil, HOME_MONITOR2, hs.layout.maximized, nil, nil, visible = true },
-			{ "LibreWolf", nil, HOME_MONITOR2, hs.layout.maximized, nil, nil, visible = true },
+			{ "Firefox", nil, HOME_MONITOR2, hs.layout.maximized, nil, nil, visible = true },
 			{ "zoom.us", nil, HOME_MONITOR2, hs.layout.maximized, nil, nil, visible = true },
 		}
 	end
@@ -77,7 +77,7 @@ layoutHome2 = function()
 	if ide then
 		left = { { ide, nil, HOME_MONITOR, hs.layout.maximized, nil, nil, visible = true } }
 		right = {
-			{ "LibreWolf", nil, HOME_MONITOR2, hs.layout.maximized, nil, nil, visible = true },
+			{ "Firefox", nil, HOME_MONITOR2, hs.layout.maximized, nil, nil, visible = true },
 			{ "Safari", nil, HOME_MONITOR2, hs.layout.maximized, nil, nil, visible = true },
 			{ "Mail", nil, HOME_MONITOR2, hs.layout.left50, nil, nil, visible = true },
 			{ "Slack", nil, HOME_MONITOR2, hs.layout.right50, nil, nil, visible = true },
@@ -90,7 +90,7 @@ layoutHome2 = function()
 			{ "Zotero", nil, HOME_MONITOR, hs.layout.maximized, nil, nil, visible = true },
 		}
 		left = {
-			{ "LibreWolf", nil, HOME_MONITOR2, u(0, 0, 1, 1), nil, nil, visible = true },
+			{ "Firefox", nil, HOME_MONITOR2, u(0, 0, 1, 1), nil, nil, visible = true },
 			{ "zoom.us", nil, HOME_MONITOR2, u(0, 0, 1, 1), nil, nil, visible = true },
 			{ "Safari", nil, HOME_MONITOR2, u(0, 0, 1, 1), nil, nil, visible = true },
 		}
@@ -100,7 +100,7 @@ end
 
 layoutLaptop = {
 	{ "Calendar", nil, MACBOOK_MONITOR, hs.layout.left50, nil, nil },
-	{ "LibreWolf", nil, MACBOOK_MONITOR, hs.layout.maximized, nil, nil },
+	{ "Firefox", nil, MACBOOK_MONITOR, hs.layout.maximized, nil, nil },
 	{ "Alacritty", nil, MACBOOK_MONITOR, hs.layout.maximized, nil, nil },
 	{ "Slack", nil, MACBOOK_MONITOR, hs.layout.right50, nil, nil },
 	{ "Safari", nil, MACBOOK_MONITOR, hs.layout.maximized, nil, nil },
