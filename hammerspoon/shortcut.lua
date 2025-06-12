@@ -123,6 +123,11 @@ hs.hotkey.bind(mod, "l", function()
 	autoLayout()
 end)
 
+-- MOd + R -- run rescue
+hs.hotkey.bind(mod, "r", function()
+	rescue()
+end)
+
 -- Mod + P -- toggle shortcut pomodoro
 hs.hotkey.bind(mod, "p", function()
 	hs.shortcuts.run("Start Pomodoro")
