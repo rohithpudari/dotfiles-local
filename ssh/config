@@ -40,10 +40,6 @@ Host samba
      User rpudari
      HostName cedar.computecanada.ca
 
- Host beluga
-     User rpudari
-     HostName beluga.computecanada.ca
-
  Host graham
      User rpudari
      HostName graham.computecanada.ca
