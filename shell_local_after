@@ -4,6 +4,7 @@
 typeset -U path  # Ensures no duplicates
 path=(
     "$HOME/.dotfiles_local/bin"
+    "$HOME/.docker/completions"
     $path
 )
 

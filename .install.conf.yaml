@@ -22,6 +22,9 @@
     ~/.ssh/config: ssh/config
     ~/.ssh/config_local: ssh/config_local
     ~/.zshrc_local_after:
+    ~/.zshrc_local_before:
+    ~/.config/nvim:
+
 
 - shell:
   - git submodule sync --recursive
