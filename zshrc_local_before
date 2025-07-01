@@ -2,7 +2,7 @@
 # Performance-optimized lazy-loaded auto-suggestions
 _load_autosuggestions() {
     # Use hardcoded path to avoid subprocess call
-    local autosuggest_path="~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
+    local autosuggest_path="~/config/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
     if [[ -f "$autosuggest_path" ]]; then
         # Set performance variables BEFORE sourcing for better initialization
