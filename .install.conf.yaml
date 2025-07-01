@@ -10,7 +10,6 @@
     ~/.gitconfig_local:
     ~/.name:
     ~/.shell_local_after:
-    ~/.shell_local_before:
     ~/.zshrc_local_before:
 
 - shell:
