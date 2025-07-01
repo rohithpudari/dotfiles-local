@@ -8,10 +8,9 @@
 [log]
 	date = auto:human
 
-[core]
-	pager = `brew --prefix git`/share/git-core/contrib/diff-highlight/diff-highlight | less
-    editor = nvim
-
 [diff "scpt"]
 	textconv = osadecompile
 	binary=true
+
+[gpg]
+    program = /usr/bin/gpg

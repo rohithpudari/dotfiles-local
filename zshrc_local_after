@@ -1,5 +1,0 @@
-# Named directories
-hash -d notes="$HOME/Documents/notes/"
-hash -d dot="$HOME/Documents/config/dotfiles/"
-hash -d dotl="$HOME/Documents/config/dotfiles_local/"
-hash -d zmk="$HOME/Documents/config/zmk_config/"

@@ -3,6 +3,7 @@
 # path_prepend "$HOME/.dotfiles_local/bin"
 typeset -U path  # Ensures no duplicates
 path=(
+    "$HOME/bin"
     "$HOME/.dotfiles_local/bin"
     $path
 )
@@ -14,20 +15,10 @@ ldfu() {
   )
 }
 
-#aliases
-alias v=nvim
-
 #gpg related
 alias gpgst='gpg -k --list-options show-uid-validity'
 alias gpgsgn='gpg --ask-cert-level --edit-key'
 alias dirs='dirs -v'
-
-# brew alias
-alias bubo='brew update && brew outdated'
-alias bubc='brew upgrade && brew cleanup'
-alias bcu='brew cu'
-alias bu='brew update && brew upgrade && brew cleanup'
-alias brewfile='brew bundle dump --force'
 
 # Push and jump
 pj() {
@@ -65,11 +56,17 @@ z() {
     z "$@"
 }
 
-# Homebrew and Related Tools
-export HOMEBREW_NO_ANALYTICS=1
-export HOMEBREW_AUTO_UPDATE_SECS=86400 # automatically update every 24 hours
-# path_prepend '/usr/local/opt/ruby/bin'
+# pyenv path
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
+# make backspace work in tmux
+stty sane
+stty erase "^?"
+
+
+# Homebrew and Related Tools
 # export JUPYTER_PATH="$HOME/.local/share/jupyter"
 
 # OPAM configuration
