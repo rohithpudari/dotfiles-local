@@ -1,4 +1,8 @@
 # open tmux at launch: attach to existing session if no session exists, a new one is created
 [terminal.shell]
 program = "/bin/zsh"
-args = ["--login", "-c", "/opt/homebrew/bin/tmux attach || //opt/homebrew/bin/tmux"]
+args = [
+    "--login",
+    "-c",
+    "/opt/homebrew/bin/tmux attach || //opt/homebrew/bin/tmux",
+]

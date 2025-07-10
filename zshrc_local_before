@@ -6,7 +6,7 @@ _load_autosuggestions() {
     
     if [[ -f "$autosuggest_path" ]]; then
         # Set performance variables BEFORE sourcing for better initialization
-        ZSH_AUTOSUGGEST_STRATEGY=(history)  # Simplified strategy - removed expensive match_prev_cmd and completion
+        ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd history completion)  # Simplified strategy - removed expensive match_prev_cmd and completion
         ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#b2b2b2"  # Removed underline for performance
         ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
         ZSH_AUTOSUGGEST_USE_ASYNC=1  # Use 1 instead of true
