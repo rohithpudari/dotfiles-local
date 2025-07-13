@@ -12,8 +12,8 @@ bind j scrollline 5
 bind k scrollline -5
 
 " K and J should move between tabs. x should close them.
-bind J tabprev
-bind K tabnext
+bind J tabnext 
+bind K tabprev
 bind x tabclose
 
 " Only hint search results on Google and DDG
