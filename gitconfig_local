@@ -6,5 +6,9 @@
 [github]
 	user = rohithpudari
 
+[diff "scpt"]
+	textconv = osadecompile
+	binary=true
+
 [gpg]
     program = /usr/bin/gpg
