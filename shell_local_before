@@ -26,5 +26,3 @@ path=(
     "$BREW_PREFIX/bin"
     $path
 )
-
-

@@ -6,4 +6,4 @@ MAIN_MONITOR = "DELL SE2722H"
 HOME_MONITOR = "HP Z24n G3"
 HOME_MONITOR2 = "BenQ GW2785TC"
 
-IDEs = { "Code", "Alacritty" }
+IDEs = { "Code", "Kitty" }

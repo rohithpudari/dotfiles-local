@@ -24,6 +24,9 @@
     ~/.zshrc_local_after:
     ~/.zshrc_local_before:
     ~/.config/nvim:
+    ~/.config/bat/config: bat/config
+    ~/.config/bat/themes: bat/themes
+    ~/.config/kitty/kitty.conf: kitty.conf
 
 
 - shell:

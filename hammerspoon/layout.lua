@@ -101,7 +101,7 @@ end
 layoutLaptop = {
 	{ "Calendar", nil, MACBOOK_MONITOR, hs.layout.left50, nil, nil },
 	{ "Firefox", nil, MACBOOK_MONITOR, hs.layout.maximized, nil, nil },
-	{ "Alacritty", nil, MACBOOK_MONITOR, hs.layout.maximized, nil, nil },
+	{ "Kitty", nil, MACBOOK_MONITOR, hs.layout.maximized, nil, nil },
 	{ "Slack", nil, MACBOOK_MONITOR, hs.layout.right50, nil, nil },
 	{ "Safari", nil, MACBOOK_MONITOR, hs.layout.maximized, nil, nil },
 	{ "Mail", nil, MACBOOK_MONITOR, hs.layout.left50, nil, nil },
@@ -151,7 +151,7 @@ end
 autoLayout = function()
 	if hasScreen(RIGHT_MONITOR) and hasScreen(MAIN_MONITOR) then
 		local ide, layout = layoutOffice()
-		local name = ide or "Alacritty"
+		local name = ide or "Kitty"
 		local description = "Office (" .. name .. ")"
 		applyLayout(description, layout)
 	elseif hasScreen(HOME_MONITOR) and hasScreen(HOME_MONITOR2) then

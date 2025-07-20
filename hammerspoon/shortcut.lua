@@ -36,9 +36,9 @@ hs.hotkey.bind(hyper, "0", function()
 	systemKey("MUTE")
 end)
 
--- ⌘ + ⏎ Opens New Alacritty
+-- ⌘ + ⏎ Opens New Kitty Terminal
 hs.hotkey.bind(hyper, "t", function()
-	hs.application.launchOrFocus("Alacritty")
+	hs.application.launchOrFocus("Kitty")
 end)
 
 -- ⌘ + ⇧ + ⏎ Opens New Browser Window

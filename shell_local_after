@@ -18,6 +18,9 @@ ldfu() {
 #aliases
 alias v=nvim
 
+# bat for cat
+alias cat='bat --paging=always --style=plain --color=always'
+
 #gpg related
 alias gpgst='gpg -k --list-options show-uid-validity'
 alias gpgsgn='gpg --ask-cert-level --edit-key'
@@ -26,7 +29,6 @@ alias dirs='dirs -v'
 # brew alias
 alias bubo='brew update && brew outdated'
 alias bubc='brew upgrade && brew cleanup'
-alias bcu='brew cu'
 alias bu='brew update && brew upgrade && brew cleanup'
 alias brewfile='brew bundle dump --force'
 
@@ -70,6 +72,11 @@ z() {
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_AUTO_UPDATE_SECS=86400 # automatically update every 24 hours
 # path_prepend '/usr/local/opt/ruby/bin'
+
+# kitty terminal update
+kitty_up() {
+    curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+}
 
 # export JUPYTER_PATH="$HOME/.local/share/jupyter"
 

@@ -9,7 +9,7 @@
 	date = auto:human
 
 [core]
-	pager = `brew --prefix git`/share/git-core/contrib/diff-highlight/diff-highlight | less
+	pager = bat --style=numbers,changes --paging=always
     editor = nvim
 
 [diff "scpt"]
