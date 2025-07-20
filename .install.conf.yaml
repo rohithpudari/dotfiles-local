@@ -10,7 +10,7 @@
 - link:
     ~/.bashrc_local_after:
     ~/.dotfiles_local: ''
-    ~/.gitconfig_local:
+    ~/.git:
     ~/.hammerspoon:
     ~/.name:
     ~/.gnupg/gpg-agent.conf: gpg-agent.conf

@@ -1,0 +1,35 @@
+[user]
+	name = Rohith Pudari
+	email = 27728974+rohithpudari@users.noreply.github.com
+
+[github]
+	user = rohithpudari
+
+[log]
+	date = auto:human
+
+[core]
+	pager = bat --style=numbers,changes --paging=always
+    editor = nvim
+
+# theme for git-delta
+[include]
+	path = ~/.git/theme.gitconfig
+
+[delta]
+    features = catppuccin-mocha
+    navigate = true
+    side-by-side = true
+
+[interactive]
+    diffFilter = delta --color-only
+
+[pager]
+    diff = delta
+    show = delta
+    log = delta
+    reflog = delta
+
+[diff "scpt"]
+	textconv = osadecompile
+	binary=true
