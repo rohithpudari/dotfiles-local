@@ -8,9 +8,5 @@
 [log]
 	date = auto:human
 
-[diff "scpt"]
-	textconv = osadecompile
-	binary=true
-
 [gpg]
     program = /usr/bin/gpg
