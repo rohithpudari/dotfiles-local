@@ -74,8 +74,8 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 defaults write -g ApplePressAndHoldEnabled -bool false
 
 # fast keyboard repeat rate
-defaults write -g KeyRepeat -int 2
-defaults write -g InitialKeyRepeat -int 15
+defaults write -g KeyRepeat -int 1
+defaults write -g InitialKeyRepeat -int 10
 
 # Avoid creating .DS_Store files on network or USB volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
