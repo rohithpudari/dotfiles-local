@@ -40,6 +40,7 @@ require("lazy").setup({
 		-- version = "*", -- try installing the latest stable version for plugins that support semver
 	},
 	-- install = { colorscheme = {} },
+	change_detection = { notify = false }, -- disable change detection notifications
 	checker = {
 		enabled = true, -- check for plugin updates periodically
 		notify = false, -- notify on update
@@ -49,9 +50,10 @@ require("lazy").setup({
 			-- disable some rtp plugins
 			disabled_plugins = {
 				"gzip",
+				"rplugin",
 				-- "matchit",
 				-- "matchparen",
-				-- "netrwPlugin",
+				"netrwPlugin",
 				"tarPlugin",
 				"tohtml",
 				-- "tutor",
