@@ -14,12 +14,13 @@
 
 # theme for git-delta
 [include]
-	path = ~/.git/theme.gitconfig
+	path = ~/.git/catppuccin.gitconfig
 
 [delta]
     features = catppuccin-mocha
     navigate = true
     side-by-side = true
+    dark = true
 
 [interactive]
     diffFilter = delta --color-only
