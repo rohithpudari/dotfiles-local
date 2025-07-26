@@ -27,7 +27,7 @@
     ~/.config/bat/config: bat/config
     ~/.config/bat/themes: bat/themes
     ~/.config/kitty/kitty.conf: kitty.conf
-
+    ~/.aerospace.toml:
 
 - shell:
   - git submodule sync --recursive

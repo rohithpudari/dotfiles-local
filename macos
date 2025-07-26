@@ -51,6 +51,12 @@ defaults write com.apple.dock expose-group-by-app -bool false
 # hide recent apps
 defaults write com.apple.dock show-recents -bool false
 
+# enable group windows by application
+defaults write com.apple.dock expose-group-apps -bool true
+
+# disable displays have separate Spaces - r1equires logout
+defaults write com.apple.spaces spans-displays -bool true
+
 # set the icon size of Dock items
 defaults write com.apple.dock tilesize -int 65
 
@@ -75,7 +81,7 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 
 # fast keyboard repeat rate
 defaults write -g KeyRepeat -int 1
-defaults write -g InitialKeyRepeat -int 10
+defaults write -g InitialKeyRepeat -int 12
 
 # Avoid creating .DS_Store files on network or USB volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
@@ -98,6 +104,9 @@ defaults write -g PMPrintingExpandedStateForPrint2 -bool true
 # expand save panel by default
 defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
 defaults write -g NSNavPanelExpandedStateForSaveMode2 -bool true
+
+# move windows by holding ctrl + cmd and dragging any part of the window (not necessarily the window title)
+defaults write -g NSWindowShouldDragOnGesture -bool true
 
 # show all file extensions
 defaults write -g AppleShowAllExtensions -bool true
@@ -381,10 +390,3 @@ defaults write com.apple.commerce AutoUpdateRestartRequired -bool true
 
 # disable storing PGP passwords in macOS keychain
 defaults write org.gpgtools.common DisableKeychain -bool yes
-
-###############################################################################
-# iTerm                                                                   #
-###############################################################################
-
-# Don’t display the annoying prompt when quitting iTerm
-defaults write com.googlecode.iterm2 PromptOnQuit -bool false
