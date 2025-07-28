@@ -78,6 +78,7 @@ opt.grepprg = "rg --vimgrep"
 vim.o.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,t:block-TermCursor" --disable curson blinking in terminal mode
 opt.ignorecase = true -- Ignore case
 opt.inccommand = "nosplit" -- preview incremental substitute
+opt.iskeyword:append("-") -- add dash to the list of word characters
 opt.jumpoptions = "view"
 opt.laststatus = 3 -- global statusline
 opt.linebreak = true -- Wrap lines at convenient points

@@ -1,5 +1,6 @@
 return {
 	"codethread/qmk.nvim",
+	event = "BufRead */zmk_config/config/*.keymap",
 	config = function()
 		---@type qmk.UserConfig
 		local conf = {
