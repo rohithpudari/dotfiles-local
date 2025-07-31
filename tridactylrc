@@ -3,6 +3,10 @@
 " as an enforced single point of truth for Tridactyl's configuration.
 sanitize tridactyllocal tridactylsync
 
+" Use dark theme
+colorscheme dark
+set theme midnight
+
 " Just use a blank page for new tab. It would be nicer to use the standard
 " Firefox homepage, but Tridactyl doesn't support this yet.
 set newtab about:blank
@@ -16,11 +20,22 @@ bind J tabnext
 bind K tabprev
 bind x tabclose
 
-" Only hint search results on Google and DDG
-bindurl www.google.com f hint -Jc .rc > div > a
-bindurl www.google.com F hint -Jbc .rc > div > a
-bindurl ^https://duckduckgo.com f hint -Jc [class=result__a]
-bindurl ^https://duckduckgo.com F hint -Jbc [class=result__a]
-
 " Comment toggler for Reddit, Hacker News and Lobste.rs
 bind ;c hint -Jc [class*="expand"],[class="togg"],[class="comment_folder"]
+
+" Only hint search results on search engines
+bindurl ^https://duckduckgo.com f hint -Jc article h2 a
+bindurl ^https://duckduckgo.com F hint -Jbc article h2 a
+
+bindurl www.startpage.com f hint -Jc .result-title
+bindurl www.startpage.com F hint -Jbc .result-title
+
+set searchurls.startpage https://www.startpage.com/do/dsearch?query=
+set searchengine startpage
+
+" Disable only f key binding on YouTube to preserve fullscreen shortcut
+unbindurl ^https://(www\.)?youtube\.com f
+
+
+" Git{Hub,Lab} git clone via SSH yank
+bind yg composite js "git clone " + document.location.href.replace(/https?:\/\//,"git@").replace("/",":").replace(/$/,".git") | clipboard yank
