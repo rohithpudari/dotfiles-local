@@ -17,11 +17,9 @@ ldfu() {
 
 #aliases
 alias v=nvim
-# search for a file using fuzzy finder and open in neovim
-alias fo="bfs -type f | fzf | sed 's/\ /\\\ /g' | xargs nvim"
 
 # bat for cat
-alias cat='bat --paging=always --style=plain --color=always'
+alias cat='bat --paging=always --color=always'
 
 # reload zsh config
 alias reload='source ~/.zshrc'
