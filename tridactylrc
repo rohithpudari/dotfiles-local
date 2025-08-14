@@ -37,7 +37,8 @@ set searchengine startpage
 unbindurl ^https://(www\.)?youtube\.com f
 
 " Git{Hub,Lab} git clone via SSH yank
-bind yg composite js "git clone " + document.location.href.replace(/https?:\/\//,"git@").replace("/",":").replace(/$/,".git") | clipboard yank
+bind yg composite js document.location.href.replace(/$/,".git") | clipboard yank
+" bind yg composite js "git clone " + document.location.href.replace(/https?:\/\//,"git@").replace("/",":").replace(/$/,".git") | clipboard yank
 
 " Put Monkeytype in ignore mode to prevent interference with typing tests
 autocmd DocStart ^https://(www\.)?monkeytype\.com mode ignore
