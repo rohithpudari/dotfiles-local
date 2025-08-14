@@ -10,7 +10,7 @@
 
 [core]
 	pager = bat --style=numbers,changes --paging=always
-    editor = nvim
+    editor = /opt/homebrew/bin/nvim
 
 # theme for git-delta
 [include]
