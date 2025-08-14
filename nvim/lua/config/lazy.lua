@@ -17,7 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	spec = {
 		-- add LazyVim and import its plugins
-		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
+		{ "LazyVim/LazyVim", import = "lazyvim.plugins", opts = { colorscheme = "tokyonight-night" } },
 		--extras
 		{ import = "lazyvim.plugins.extras.coding.Luasnip" },
 		{ import = "lazyvim.plugins.extras.coding.Mini-comment" },
@@ -25,6 +25,7 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.ai.copilot" },
 		{ import = "lazyvim.plugins.extras.lang.python" },
 		{ import = "lazyvim.plugins.extras.lang.Markdown" },
+		{ import = "lazyvim.plugins.extras.lang.Toml" },
 		{ import = "lazyvim.plugins.extras.editor.fzf" },
 		{ import = "lazyvim.plugins.extras.lang.tex" },
 		{ import = "lazyvim.plugins.extras.formatting.Prettier" },
