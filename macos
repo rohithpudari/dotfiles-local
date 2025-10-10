@@ -18,7 +18,8 @@ done 2>/dev/null &
 ###############################################################################
 
 # System Preferences > General > Appearance
-defaults write -globalDomain AppleInterfaceStyleSwitchesAutomatically -bool true
+# Enable dark mode globally
+defaults write NSGlobalDomain AppleInterfaceStyle Dark
 
 # Menu bar: show remaining battery  percentage
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"

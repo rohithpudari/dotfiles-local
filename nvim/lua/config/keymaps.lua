@@ -31,12 +31,30 @@ vim.keymap.set("n", "<leader>5", "5gt", { desc = "Move to tab 5" })
 -- Allow to copy paste and dont have the buffer reinitialized after pasting
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
+-- Unmaps Q in normal mode (default is to record a macro)
+vim.keymap.set("n", "Q", "<nop>")
+
+-- Replace the word cursor is on globally
+vim.keymap.set(
+	"n",
+	"<leader>snr",
+	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+	{ desc = "Replace word cursor is on globally" }
+)
+
+-- delete without yanking
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
+
 -- interactions with the system copy buffers
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- map semi-colon to colon in normal mode
 vim.keymap.set("n", ";", ":", { noremap = true, silent = true })
+
+-- Search/grep notes from the notes folder usng fzf-lua
+vim.keymap.set("n", "<leader>ns", ":FzfLua files cwd=~/Documents/notes/<cr>")
+vim.keymap.set("n", "<leader>ng", ":FzfLua live_grep cwd=~/Documents/notes/<cr>")
 
 -- Disable arrow keys in normal mode - remove later after muscle memory
 vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')

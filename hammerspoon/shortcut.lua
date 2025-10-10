@@ -8,6 +8,7 @@ function openPrivateBrowser()
 	if a == nil then
 		hs.application.launchOrFocus("Firefox")
 	end
+	hs.application.launchOrFocus("Firefox")
 	a:selectMenuItem("New Private Window")
 end
 

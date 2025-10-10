@@ -17,9 +17,24 @@ ldfu() {
 
 #aliases
 alias v=nvim
+# custom nvim config
+alias nv='NVIM_APPNAME="custom_nvim" nvim'
 
 # bat for cat
 alias cat='bat --paging=always --color=always'
+alias rg='rg --smart-case'
+
+# time_zsh load time
+alias time_zsh='time zsh -i -c exit'
+
+# fzf search home
+alias fo="fd --type file . '$HOME' | fzf | sed 's/\ /\\\ /g' | xargs nvim"
+
+# Open a Finder window in your current directory
+alias f='open -a Finder ./'
+
+# zoxide alias
+alias j='z'
 
 # reload zsh config
 alias reload='source ~/.zshrc'
@@ -79,6 +94,11 @@ export HOMEBREW_AUTO_UPDATE_SECS=86400 # automatically update every 24 hours
 # kitty terminal update
 kitty_up() {
     curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+}
+
+# batt update
+bat_up() {
+    bash <(curl -fsSL https://github.com/charlie0129/batt/raw/master/hack/install.sh)
 }
 
 # export JUPYTER_PATH="$HOME/.local/share/jupyter"

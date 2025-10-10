@@ -5,20 +5,29 @@ sanitize tridactyllocal tridactylsync
 
 " Use dark theme
 colorscheme dark
-set theme midnight
 
 " Just use a blank page for new tab. It would be nicer to use the standard
 " Firefox homepage, but Tridactyl doesn't support this yet.
 set newtab about:blank
 
-" The default jump of 10 is a bit much.
-bind j scrollline 5
-bind k scrollline -5
-
 " K and J should move between tabs. x should close them.
 bind J tabnext 
 bind K tabprev
 bind x tabclose
+
+bind S saveas
+
+" Ctrl-F should use the browser's native 'find' functionality.
+unbind <C-f>
+
+" But also support Tridactyl search too.
+bind / fillcmdline find
+bind ? fillcmdline find -?
+bind n findnext 1
+bind N findnext -1
+
+" Yank current tab URL as markdown link format
+bind ym composite url | jsb -p "[" + document.title + "](" + tri.contentLocation.href + ")" | yank
 
 " Comment toggler for Reddit, Hacker News and Lobste.rs
 bind ;c hint -Jc [class*="expand"],[class="togg"],[class="comment_folder"]
@@ -27,11 +36,18 @@ bind ;c hint -Jc [class*="expand"],[class="togg"],[class="comment_folder"]
 bindurl ^https://duckduckgo.com f hint -Jc article h2 a
 bindurl ^https://duckduckgo.com F hint -Jbc article h2 a
 
-bindurl www.startpage.com f hint -Jc .result-title
-bindurl www.startpage.com F hint -Jbc .result-title
+set searchengine duckduckgo
+set searchurls.amo https://addons.mozilla.org/en-US/firefox/search/?q=
+set searchurls.archive https://web.archive.org/web/*/%s
+set searchurls.g https://www.google.com/search?q=
+set searchurls.map https://www.google.com/maps/search/%s
+set searchurls.y https://www.youtube.com/results?search_query=
 
-set searchurls.startpage https://www.startpage.com/do/dsearch?query=
-set searchengine startpage
+" common websites 
+bind 'y tabopen https://youtube.com/
+bind 'h tabopen https://news.ycombinator.com/news
+bind '. tabopen about:config
+bind 'g tabopen https://www.github.com/
 
 " Disable only f key binding on YouTube to preserve fullscreen shortcut
 unbindurl ^https://(www\.)?youtube\.com f

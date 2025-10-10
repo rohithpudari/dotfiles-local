@@ -13,7 +13,7 @@ opt.breakindent = true -- enable break indent
 opt.clipboard = "" -- do not use system clipboard (default in lazyvim)
 opt.foldexpr = "v:lua.require 'lazyvim.util'.ui.foldexpr()" -- lazyvim fold expression
 opt.foldtext = ""
-vim.o.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,t:block-TermCursor" --disable curson blinking in terminal mode
+opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,t:block-TermCursor" --disable curson blinking in terminal mode
 opt.iskeyword:append("-") -- add dash to the list of word characters
 opt.scrolloff = 8 -- minimum number of screen lines to keep above and below the cursor
 opt.softtabstop = 4 -- one tab = 4 spaces
