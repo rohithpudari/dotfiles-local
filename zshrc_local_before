@@ -24,7 +24,7 @@ _load_autosuggestions() {
         source "$autosuggest_path"
         
         # Custom keyboard shortcuts for autosuggest
-        bindkey '^[[1;9C' autosuggest-accept      # cmd+right arrow  to accept suggestion
+        bindkey '^[[108;9u' autosuggest-accept      # cmd+l  to accept suggestion
         bindkey '^[[1;9D' autosuggest-clear       # cmd+left arrow to clear suggestion
         bindkey '^[f' forward-word           # Alt+F to accept one word (optional)
         bindkey '^I' autosuggest-execute     # tab to execute suggestion

@@ -7,8 +7,8 @@
 vim.keymap.set("", "H", "^")
 vim.keymap.set("", "L", "$")
 
--- jj to escape from insert mode
-vim.keymap.set("i", "jj", "<Esc>", { desc = "Exit insert mode with jj" })
+-- jk to escape from insert mode
+vim.keymap.set("i", "jk", "<Esc>", { desc = "Exit insert mode with jk" })
 
 -- select all
 vim.keymap.set("n", "<C-a", "gg<S-v>G", { desc = "Select all" })
