@@ -1,3 +1,5 @@
+Include /Users/rohith/.colima/ssh_config
+
 # includes must go at the top
 # host-specific customization
 Include ~/.ssh/config_local
@@ -36,21 +38,17 @@ Host samba
     HostName flames.eecg.utoronto.ca
 
 # compute canada
- Host cedar
+ Host fir
      User rpudari
-     HostName cedar.computecanada.ca
+     HostName fir.alliancecan.ca
 
- Host graham
+ Host nibi
      User rpudari
-     HostName graham.computecanada.ca
+     HostName nibi.alliancecan.ca 
 
- Host narval
+ Host trillium
      User rpudari
-     HostName narval.computecanada.ca
-
- Host niagara
-     User rpudari
-     HostName niagara.computecanada.ca
+     HostName trillium.alliancecan.ca
 
 # world of code
 Host woc

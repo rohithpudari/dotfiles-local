@@ -85,7 +85,10 @@ z() {
     _init_zoxide
     z "$@"
 }
-
+zi() {
+    _init_zoxide
+    zi "$@"
+}
 # Homebrew and Related Tools
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_AUTO_UPDATE_SECS=86400 # automatically update every 24 hours
