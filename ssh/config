@@ -50,6 +50,10 @@ Host samba
      User rpudari
      HostName trillium.alliancecan.ca
 
+Host rorqual
+    User rpudari
+    HostName rorqual.alliancecan.ca
+
 # world of code
 Host woc
 	Hostname da0.eecs.utk.edu

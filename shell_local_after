@@ -39,6 +39,11 @@ alias j='z'
 # reload zsh config
 alias reload='source ~/.zshrc'
 
+#vscode launch
+code() {
+    open -a "/Applications/Visual Studio Code.app" "${1:-.}"
+}
+
 #gpg related
 alias gpgst='gpg -k --list-options show-uid-validity'
 alias gpgsgn='gpg --ask-cert-level --edit-key'
@@ -100,7 +105,7 @@ kitty_up() {
 }
 
 # batt update
-bat_up() {
+batt_up() {
     bash <(curl -fsSL https://github.com/charlie0129/batt/raw/master/hack/install.sh)
 }
 
