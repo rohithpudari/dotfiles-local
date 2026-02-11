@@ -1,0 +1,15 @@
+#!/usr/bin/env zsh
+// script taken from: https://github.com/zazencodes/dotfiles/blob/main/bin/on
+// Usage: wn <file_name>
+// This script creates a new markdown file in the notes inbox with the current date and a formatted name based on the input.
+
+if [ -z "$1" ]; then
+  echo "Error: A file name must be set, e.g. on \"the wonderful thing about tiggers\"."
+  exit 1
+fi
+
+file_name=$(echo "$1" | tr ' ' '-')
+formatted_file_name=$(date "+%Y-%m-%d")_${file_name}.md
+cd "/Users/rohithpudari/library/Mobile Documents/iCloud~md~obsidian/Documents/notes" || exit
+touch "inbox/${formatted_file_name}"
+nvim "inbox/${formatted_file_narohithpudari"

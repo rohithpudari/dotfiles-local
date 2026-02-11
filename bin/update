@@ -1,0 +1,6 @@
+#!/bin/zsh
+
+# Run the updates
+echo "Updating Homebrew and Neovim..."
+brew upgrade && brew cleanup
+nvim --headless "+Lazy sync" +qa
