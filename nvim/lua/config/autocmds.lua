@@ -9,6 +9,23 @@
 -- store original vimwiki_list config, we will need it later
 -- !!!make sure vimwiki plugin is loaded before running this!!!
 
+-- Open Help to right split
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "help",
+	callback = function()
+		vim.cmd.wincmd("L")
+	end,
+})
+
+-- Disable auto comment continuation on new line
+vim.api.nvim_create_autocmd("FileType", {
+	group = vim.api.nvim_create_augroup("no_auto_comment", { clear = true }),
+	pattern = { "lua", "python", "javascript", "typescript", "sh" },
+	callback = function()
+		vim.opt_local.formatoptions:remove({ "c", "r", "o", "q" })
+	end,
+})
+
 -- add template for source notes [TODO: update the abstract and bibliography sections with admonitions]
 -- vim.api.nvim_create_autocmd("BufNewFile", {
 --     pattern = { "*/notes/sources/*.md"},
