@@ -42,6 +42,17 @@ vim.keymap.set(
 	{ desc = "Replace word cursor is on globally" }
 )
 
+-- Auto-yank visual selection to the system clipboard on mouse release
+-- NOTE: This requires Neovim to receive mouse events (so `mouse` must include visual mode)
+-- NOTE: LazyVim already enables `opt.mouse = "a"` (mouse mode), so we don't set it here
+vim.keymap.set("v", "<LeftRelease>", [["+ygv]], { silent = true, desc = "[P]Mouse select -> yank to system clipboard" })
+vim.keymap.set(
+	"v",
+	"<2-LeftRelease>",
+	[["+ygv]],
+	{ silent = true, desc = "[P]Mouse select (double) -> yank to system clipboard" }
+)
+
 -- delete without yanking
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 

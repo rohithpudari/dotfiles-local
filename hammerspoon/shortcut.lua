@@ -65,13 +65,15 @@ hs.hotkey.bind(hyper, "a", function()
 	hs.application.launchOrFocus("Activity Monitor")
 end)
 
--- Launch or Focus Activity Monitor
+-- Launch or Focus Slack
 hs.hotkey.bind(hyper, "s", function()
 	hs.application.launchOrFocus("Slack")
 end)
 
--- Hyper+F makes toggles app zoom
---hs.hotkey.bind(hyper, "f", function() hs.application.launchOrFocus("Finder") end)
+-- Hyper+F makes toggles app finder
+hs.hotkey.bind(hyper, "f", function()
+	hs.application.launchOrFocus("Finder")
+end)
 
 -- Hyper+C opens VS Code
 hs.hotkey.bind(hyper, "v", function()
@@ -99,13 +101,13 @@ hs.hotkey.bind(hyper, "p", function()
 end)
 
 --Hyper+D opens frequently opened apps and does autolayout
-hs.hotkey.bind(hyper, "d", function()
-	hs.application.launchOrFocus("Mail")
-	hs.application.launchOrFocus("Slack")
-	hs.application.launchOrFocus("Firefox")
-	autoLayout()
-end)
-
+-- hs.hotkey.bind(hyper, "d", function()
+-- 	hs.application.launchOrFocus("Mail")
+-- 	hs.application.launchOrFocus("Slack")
+-- 	hs.application.launchOrFocus("Firefox")
+-- 	autoLayout()
+-- end)
+--
 --Hyper+D opens OneDrive
 -- hs.hotkey.bind(hyper, "1", function() hs.applicatFocus("Music") end)
 
@@ -120,14 +122,14 @@ end)
 -- end)
 
 -- Mod + L -- run autLayout function
-hs.hotkey.bind(mod, "l", function()
-	autoLayout()
-end)
-
--- MOd + R -- run rescue
-hs.hotkey.bind(mod, "r", function()
-	rescue()
-end)
+-- hs.hotkey.bind(mod, "l", function()
+-- 	autoLayout()
+-- end)
+--
+-- -- MOd + R -- run rescue
+-- hs.hotkey.bind(mod, "r", function()
+-- 	rescue()
+-- end)
 
 -- Mod + P -- toggle shortcut pomodoro
 hs.hotkey.bind(mod, "p", function()

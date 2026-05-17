@@ -16,18 +16,20 @@ local icon = [[
 7 . . . . . . . . . . . 5
 ]]
 
-utilMenu:setIcon('ASCII:' .. icon)
+utilMenu:setIcon("ASCII:" .. icon)
 
 local menu = nil
 
-local reloadMenu = function() utilMenu:setMenu(menu) end
+local reloadMenu = function()
+	utilMenu:setMenu(menu)
+end
 
 menu = {
-  {
-    title = "Mono Audio",
-    checked = false,
-    fn = function(modifiers, menuItem)
-      local script = [[
+	{
+		title = "Mono Audio",
+		checked = false,
+		fn = function(modifiers, menuItem)
+			local script = [[
         tell application "System Preferences"
           reveal anchor "Hearing" of pane id "com.apple.preference.universalaccess"
         end tell
@@ -51,46 +53,46 @@ menu = {
         tell application "System Preferences" to quit
       ]]
 
-      local toggle = ""
-      if not menuItem.checked then
-        toggle = "not"
-      end
-      script = string.format(script, toggle)
-      hs.osascript.applescript(script)
+			local toggle = ""
+			if not menuItem.checked then
+				toggle = "not"
+			end
+			script = string.format(script, toggle)
+			hs.osascript.applescript(script)
 
-      menuItem.checked = not menuItem.checked
-      reloadMenu()
-    end
-  },
-  {
-    title = "Caffeinate",
-    checked = false,
-    fn = function(modifiers, menuItem)
-      local enabled = hs.caffeinate.toggle('displayIdle')
-      if enabled then
-        hs.notify.new({title='Caffeinate', informativeText='Caffeinate on'}):send()
-      else
-        hs.notify.new({title='Caffeinate', informativeText='Caffeinate off'}):send()
-      end
+			menuItem.checked = not menuItem.checked
+			reloadMenu()
+		end,
+	},
+	{
+		title = "Caffeinate",
+		checked = false,
+		fn = function(modifiers, menuItem)
+			local enabled = hs.caffeinate.toggle("displayIdle")
+			if enabled then
+				hs.notify.new({ title = "Caffeinate", informativeText = "Caffeinate on" }):send()
+			else
+				hs.notify.new({ title = "Caffeinate", informativeText = "Caffeinate off" }):send()
+			end
 
-      menuItem.checked = enabled
-      reloadMenu()
-    end
-  },
-  {
-    title = "-" -- separator
-  },
-  {
-    title = "Rescue Windows",
-    fn = rescue
-  },
-  {
-    title = "-" -- separator
-  },
-  {
-    title = "Auto Layout",
-    fn = autoLayout
-  },
+			menuItem.checked = enabled
+			reloadMenu()
+		end,
+	},
+	{
+		title = "-", -- separator
+	},
+	-- {
+	--   title = "Rescue Windows",
+	--   fn = rescue
+	-- },
+	-- {
+	--   title = "-" -- separator
+	-- },
+	-- {
+	--   title = "Auto Layout",
+	--   fn = autoLayout
+	-- },
 }
 
 reloadMenu()
