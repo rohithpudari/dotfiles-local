@@ -1,0 +1,202 @@
+#!/usr/bin/env bash
+# connect — usage: connect gpu | connect torrent
+
+set -u
+
+# ─── CONFIGURATION ────────────────────────────────────────────────────────────
+OPENVPN_BIN="/Applications/OpenVPN Connect/OpenVPN Connect.app/Contents/MacOS/OpenVPN Connect"
+OPENVPN_PROFILE_ID="1737992325429"
+OPENVPN_HOST="dlgate.csl.toronto.edu"
+
+MACOS_VPN_NAME="ECE VPN"
+MACOS_VPN_TIMEOUT=30
+OPENVPN_TIMEOUT=60
+OPENVPN_SETTLE_SECONDS=2
+
+STATE_DIR="/tmp/connect-vpn-state"
+OPENVPN_LOCK_FILE="$STATE_DIR/openvpn.lock"
+ECE_LOCK_FILE="$STATE_DIR/ecevpn.lock"
+# ──────────────────────────────────────────────────────────────────────────────
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+log() { echo -e "${GREEN}[+]${NC} $1"; }
+warn() { echo -e "${YELLOW}[!]${NC} $1"; }
+err() {
+    echo -e "${RED}[-]${NC} $1"
+    exit 1
+}
+
+OPENVPN_CONNECTED_BY_US=false
+ECE_VPN_CONNECTED_BY_US=false
+
+mkdir -p "$STATE_DIR"
+
+acquire_lock() {
+    local lock_file="$1"
+    if [[ -f "$lock_file" ]]; then
+        local pid
+        pid="$(cat "$lock_file" 2>/dev/null || true)"
+        if [[ -n "${pid:-}" ]] && kill -0 "$pid" 2>/dev/null; then
+            return 1
+        fi
+    fi
+    echo $$ >"$lock_file"
+    return 0
+}
+
+release_lock() {
+    local lock_file="$1"
+    if [[ -f "$lock_file" ]]; then
+        local pid
+        pid="$(cat "$lock_file" 2>/dev/null || true)"
+        if [[ "${pid:-}" == "$$" ]]; then
+            rm -f "$lock_file"
+        fi
+    fi
+}
+
+is_ece_connected() {
+    local status
+    status="$(scutil --nc status "$MACOS_VPN_NAME" 2>/dev/null | head -1)"
+    [[ "$status" == "Connected" ]]
+}
+
+connect_ece_vpn() {
+    if is_ece_connected; then
+        log "ECE VPN already connected."
+        return 0
+    fi
+
+    log "Connecting to ECE VPN..."
+    networksetup -connectpppoeservice "$MACOS_VPN_NAME" >/dev/null 2>&1 ||
+        err "Failed to start '$MACOS_VPN_NAME'."
+
+    local elapsed=0
+    while [[ $elapsed -lt $MACOS_VPN_TIMEOUT ]]; do
+        if is_ece_connected; then
+            log "ECE VPN connected."
+            acquire_lock "$ECE_LOCK_FILE" && ECE_VPN_CONNECTED_BY_US=true
+            return 0
+        fi
+        sleep 2
+        ((elapsed += 2))
+    done
+
+    err "ECE VPN did not connect within ${MACOS_VPN_TIMEOUT}s."
+}
+
+count_utun() {
+    ifconfig 2>/dev/null | grep -c '^utun'
+}
+
+connect_openvpn() {
+    if [[ -f "$OPENVPN_LOCK_FILE" ]]; then
+        local lock_pid
+        lock_pid="$(cat "$OPENVPN_LOCK_FILE" 2>/dev/null || true)"
+        if [[ -n "${lock_pid:-}" ]] && kill -0 "$lock_pid" 2>/dev/null; then
+            log "OpenVPN already connected (by another session)."
+            return 0
+        else
+            rm -f "$OPENVPN_LOCK_FILE"
+        fi
+    fi
+
+    local before_utun after_utun elapsed
+    before_utun="$(count_utun)"
+
+    log "Connecting to OpenVPN: $OPENVPN_HOST..."
+    "$OPENVPN_BIN" --connect-shortcut="$OPENVPN_PROFILE_ID" >/dev/null 2>&1 &
+    disown
+
+    log "Waiting for OpenVPN tunnel..."
+    elapsed=0
+    while [[ $elapsed -lt $OPENVPN_TIMEOUT ]]; do
+        after_utun="$(count_utun)"
+        if [[ "$after_utun" -gt "$before_utun" ]]; then
+            log "OpenVPN tunnel up. Waiting for routing and DNS to stabilise..."
+            sleep "$OPENVPN_SETTLE_SECONDS"
+            log "OpenVPN connected."
+            acquire_lock "$OPENVPN_LOCK_FILE" && OPENVPN_CONNECTED_BY_US=true
+            return 0
+        fi
+        sleep 2
+        ((elapsed += 2))
+    done
+
+    err "OpenVPN did not connect within ${OPENVPN_TIMEOUT}s."
+}
+
+disconnect_openvpn_if_owned() {
+    if [[ "$OPENVPN_CONNECTED_BY_US" == true ]]; then
+        "$OPENVPN_BIN" --disconnect-shortcut="$OPENVPN_PROFILE_ID" >/dev/null 2>&1 &&
+            log "OpenVPN disconnected."
+        osascript -e 'quit app "OpenVPN Connect"' >/dev/null 2>&1 &&
+            log "OpenVPN Connect app closed."
+        release_lock "$OPENVPN_LOCK_FILE"
+    else
+        log "OpenVPN was not started by this session — leaving it connected."
+    fi
+}
+
+disconnect_ece_if_owned() {
+    if [[ "$ECE_VPN_CONNECTED_BY_US" == true ]]; then
+        networksetup -disconnectpppoeservice "$MACOS_VPN_NAME" >/dev/null 2>&1 &&
+            log "ECE VPN disconnected."
+        release_lock "$ECE_LOCK_FILE"
+    else
+        log "ECE VPN was not started by this session — leaving it connected."
+    fi
+}
+
+cleanup_gpu() {
+    echo ""
+    warn "Session ended. Cleaning up..."
+    disconnect_openvpn_if_owned
+    disconnect_ece_if_owned
+}
+
+cleanup_torrent() {
+    echo ""
+    warn "Session ended. Cleaning up..."
+    disconnect_ece_if_owned
+}
+
+wait_for_gpu_name_resolution() {
+    local target="h100-dell.csl.toronto.edu"
+    local i
+    for ((i = 1; i <= 10; i++)); do
+        if dscacheutil -q host -a name "$target" >/dev/null 2>&1; then
+            return 0
+        fi
+        sleep 2
+    done
+    warn "Hostname $target still not resolving. SSH may fail if VPN DNS is not ready."
+    return 0
+}
+
+case "${1:-}" in
+gpu)
+    connect_openvpn
+    connect_ece_vpn
+    wait_for_gpu_name_resolution
+    trap cleanup_gpu EXIT
+    log "VPNs up. Connecting to gpu..."
+    ssh gpu
+    ;;
+torrent)
+    connect_ece_vpn
+    trap cleanup_torrent EXIT
+    log "ECE VPN up. Connecting to torrent..."
+    ssh torrent
+    ;;
+*)
+    echo -e "Usage: connect ${GREEN}<server>${NC}"
+    echo -e "  ${GREEN}gpu${NC}     — OpenVPN + ECE VPN → ssh gpu"
+    echo -e "  ${GREEN}torrent${NC} — ECE VPN only      → ssh torrent"
+    exit 1
+    ;;
+esac

@@ -26,6 +26,7 @@
     ~/.config/bat/config: bat/config
     ~/.config/bat/themes: bat/themes
     ~/.config/kitty/kitty.conf: kitty.conf
+    ~/.config/gh/config.yml: gh.yml
     ~/.aerospace.toml:
 
 - shell:
