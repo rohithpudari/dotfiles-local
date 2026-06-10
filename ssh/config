@@ -50,6 +50,10 @@ Host samba
      User rpudari
      HostName trillium.alliancecan.ca
 
+Host trillium_gpu
+    User rpudari
+    HostName trillium-gpu.alliancecan.ca
+
 Host rorqual
     User rpudari
     HostName rorqual.alliancecan.ca

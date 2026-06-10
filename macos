@@ -21,6 +21,13 @@ done 2>/dev/null &
 # Enable dark mode globally
 defaults write NSGlobalDomain AppleInterfaceStyle Dark
 
+# Set up trackpad & mouse speed
+defaults write -g com.apple.trackpad.scaling -int 2
+defaults write -g com.apple.mouse.scaling -float 2.5
+
+# Tint window background with wallpaper color
+defaults write NSGlobalDomain AppleReduceDesktopTinting -bool false
+
 # Menu bar: show remaining battery  percentage
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 
@@ -42,7 +49,7 @@ defaults write com.apple.dock showhidden -bool true
 # Show indicator lights for open applications in the Dock
 defaults write com.apple.dock show-process-indicators -bool true
 
-# disableaAutomatically rearranging spaces based on most recent use
+# disable Automatically rearranging spaces based on most recent use
 defaults write com.apple.dock "mru-spaces" -bool "false"
 
 # Don’t group windows by application in Mission Control
@@ -79,6 +86,9 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 # disable keyboard press and hold popup
 defaults write -g ApplePressAndHoldEnabled -bool false
+
+# Use AirDrop over every interface"
+defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 
 # fast keyboard repeat rate
 defaults write -g KeyRepeat -int 1
@@ -142,6 +152,12 @@ defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
 defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
 defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 
+# Save to disk by default, instead of iCloud
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+
+# Keep menu bar visible
+defaults write NSGlobalDomain _HIHideMenuBar -bool false
+
 # Use list view in all Finder windows by default
 # Four-letter codes for the other view modes: `icnv`, `clmv`, `glyv`
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
@@ -154,7 +170,7 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
     Privileges -bool true
 
 # Require password immediately after sleep or screen saver begins
-defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPassword -bool true
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # Save screenshots to the desktop
