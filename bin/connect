@@ -185,7 +185,7 @@ gpu)
     wait_for_gpu_name_resolution
     trap cleanup_gpu EXIT
     log "VPNs up. Connecting to gpu..."
-    ssh gpu
+    ssh -L 8000:127.0.0.1:8000 -L 8001:127.0.0.1:8001 -L 8002:127.0.0.1:8002 gpu
     ;;
 torrent)
     connect_ece_vpn

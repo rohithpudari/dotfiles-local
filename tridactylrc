@@ -44,10 +44,10 @@ set searchurls.map https://www.google.com/maps/search/%s
 set searchurls.y https://www.youtube.com/results?search_query=
 
 " common websites 
-bind 'y tabopen https://youtube.com/
-bind 'h tabopen https://news.ycombinator.com/news
-bind '. tabopen about:config
-bind 'g tabopen https://www.github.com/
+bind gy tabopen https://youtube.com/
+bind gh tabopen https://news.ycombinator.com/news
+bind g. tabopen about:config
+bind gg tabopen https://www.github.com/
 
 " Disable only f key binding on YouTube to preserve fullscreen shortcut
 unbindurl ^https://(www\.)?youtube\.com f

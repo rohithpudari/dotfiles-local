@@ -255,7 +255,7 @@ run = 'move-node-to-workspace C'
 # Browsers to Workspaces
 [[on-window-detected]]
 if.app-id = 'com.apple.Safari'
-run = 'move-node-to-workspace S'
+run = 'move-node-to-workspace W'
 
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
@@ -288,6 +288,11 @@ run = 'move-node-to-workspace 1'
 [[on-window-detected]]
 if.app-id = 'org.zotero.zotero'
 run = 'move-node-to-workspace B'
+
+# Obsidian to Workspace O
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = 'move-node-to-workspace O'
 
 # Send Zoom to Workspace Z
 [[on-window-detected]]
