@@ -33,8 +33,8 @@ bind ym composite url | jsb -p "[" + document.title + "](" + tri.contentLocation
 bind ;c hint -Jc [class*="expand"],[class="togg"],[class="comment_folder"]
 
 " Only hint search results on search engines
-bindurl ^https://duckduckgo.com f hint -Jc article h2 a
-bindurl ^https://duckduckgo.com F hint -Jbc article h2 a
+bindurl ^https://duckduckgo.com f hint -Jc article h2 a, input[name="q"]
+bindurl ^https://duckduckgo.com F hint -Jbc article h2 a, input[name="q"]
 
 set searchengine duckduckgo
 set searchurls.amo https://addons.mozilla.org/en-US/firefox/search/?q=
@@ -49,8 +49,9 @@ bind gh tabopen https://news.ycombinator.com/news
 bind g. tabopen about:config
 bind gg tabopen https://www.github.com/
 
-" Disable only f key binding on YouTube to preserve fullscreen shortcut
-unbindurl ^https://(www\.)?youtube\.com f
+" Disable only f key binding on YouTube to preserve fullscreen shortcut and use s keybinding instead of f for links
+unbindurl youtube\.com f
+bindurl youtube\.com s hint
 
 " Git{Hub,Lab} git clone via SSH yank
 bind yg composite js document.location.href.replace(/$/,".git") | clipboard yank
