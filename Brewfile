@@ -37,6 +37,8 @@ brew "libomp"
 brew "make"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Capability-based sandbox shell for AI agents with OS-enforced isolation
+brew "nono"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # Search tool like grep and The Silver Searcher

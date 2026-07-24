@@ -21,6 +21,7 @@
     navigate = true
     side-by-side = true
     dark = true
+    hyperlinks = true
 
 [interactive]
     diffFilter = delta --color-only
@@ -29,6 +30,7 @@
     diff = delta
     show = delta
     log = delta
+    blame = delta
     reflog = delta
 
 [diff "scpt"]

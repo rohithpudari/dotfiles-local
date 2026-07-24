@@ -9,6 +9,7 @@
 
 - link:
     ~/.bashrc_local_after:
+    ~/.config/nono/profiles: nono/profiles
     ~/.dotfiles_local: ""
     ~/.git:
     ~/.hammerspoon:

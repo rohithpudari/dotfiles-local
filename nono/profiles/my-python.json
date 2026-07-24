@@ -1,0 +1,8 @@
+{
+  "groups": {
+    "include": ["python_runtime"]
+  },
+  "filesystem": {
+    "allow": ["~/.cache/uv"]
+  }
+}

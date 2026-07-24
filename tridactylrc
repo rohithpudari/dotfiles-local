@@ -57,8 +57,9 @@ bindurl youtube\.com s hint
 bind yg composite js document.location.href.replace(/$/,".git") | clipboard yank
 " bind yg composite js "git clone " + document.location.href.replace(/https?:\/\//,"git@").replace("/",":").replace(/$/,".git") | clipboard yank
 
-" Put Monkeytype in ignore mode to prevent interference with typing tests
+" Put websites in ignore mode to prevent interference with typing tests
 autocmd DocStart ^https://(www\.)?monkeytype\.com mode ignore
+autocmd DocStart ^https://(www\.)?speedcoder\.net mode ignore
 
 " Put Overleaf in ignore mode to prevent interference with overleaf vim editor
 autocmd DocStart ^https://(www\.)?overleaf\.com/project/.* mode ignore
