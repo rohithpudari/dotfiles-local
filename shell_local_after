@@ -127,6 +127,7 @@ zi() {
 # Homebrew and Related Tools
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_AUTO_UPDATE_SECS=86400 # automatically update every 24 hours
+export HOMEBREW_NO_ASK=1 # dont ask for confirmation when installing packages
 # path_prepend '/usr/local/opt/ruby/bin'
 
 # kitty terminal update

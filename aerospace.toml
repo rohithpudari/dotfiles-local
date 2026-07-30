@@ -252,7 +252,7 @@ run = 'move-node-to-workspace C'
 # Browsers to Workspaces
 [[on-window-detected]]
 if.app-id = 'com.apple.Safari'
-run = 'move-node-to-workspace W'
+run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
