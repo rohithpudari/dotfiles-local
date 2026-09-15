@@ -185,13 +185,17 @@ gpu)
     wait_for_gpu_name_resolution
     trap cleanup_gpu EXIT
     log "VPNs up. Connecting to gpu..."
-    ssh -L 8000:127.0.0.1:8000 -L 8001:127.0.0.1:8001 -L 8002:127.0.0.1:8002 gpu
+    kitty +kitten ssh \
+        -L 8000:127.0.0.1:8000 \
+        -L 8001:127.0.0.1:8001 \
+        -L 8002:127.0.0.1:8002 \
+        gpu
     ;;
 torrent)
     connect_ece_vpn
     trap cleanup_torrent EXIT
     log "ECE VPN up. Connecting to torrent..."
-    ssh torrent
+    kitty +kitten ssh torrent
     ;;
 *)
     echo -e "Usage: connect ${GREEN}<server>${NC}"

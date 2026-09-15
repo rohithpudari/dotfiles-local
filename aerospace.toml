@@ -255,6 +255,10 @@ if.app-id = 'com.apple.Safari'
 run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
+if.app-id = 'com.microsoft.Powerpoint'
+run = 'move-node-to-workspace P'
+
+[[on-window-detected]]
 if.app-id = 'com.google.Chrome'
 run = 'move-node-to-workspace W'
 

@@ -11,7 +11,8 @@
     ~/.bashrc_local_after:
     ~/.config/nono/profiles: nono/profiles
     ~/.dotfiles_local: ""
-    ~/.git:
+    ~/.gitconfig_local:
+    ~/.catppuccin.gitconfig:
     ~/.hammerspoon:
     ~/.name:
     ~/.gnupg/gpg-agent.conf: gpg-agent.conf
@@ -26,7 +27,7 @@
     ~/.config/nvim:
     ~/.config/bat/config: bat/config
     ~/.config/bat/themes: bat/themes
-    ~/.config/kitty/kitty.conf: kitty.conf
+    ~/.config/kitty: kitty
     ~/.config/gh/config.yml: gh.yml
     ~/.aerospace.toml:
 

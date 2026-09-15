@@ -281,13 +281,13 @@ hs.hotkey.bind({ "cmd", "alt" }, "c", function()
 	openOrFocusSafari("https://chatgpt.com")
 end)
 
-hs.hotkey.bind({ "cmd", "alt" }, "p", function()
-	openOrFocusSafari("https://perplexity.ai")
-end)
-
-hs.hotkey.bind({ "cmd", "alt" }, "g", function()
-	openOrFocusSafari("https://gemini.google.com/app")
-end)
+-- hs.hotkey.bind({ "cmd", "alt" }, "p", function()
+-- 	openOrFocusSafari("https://perplexity.ai")
+-- end)
+--
+-- hs.hotkey.bind({ "cmd", "alt" }, "g", function()
+-- 	openOrFocusSafari("https://gemini.google.com/app")
+-- end)
 
 -- Hyper+Escape: Sleep machine
 hs.hotkey.bind(hyper, "escape", function()
@@ -304,7 +304,7 @@ end)
 -- =========================
 
 -- Define the target monitor used to trigger Bluetooth power-on.
-local targetMonitor = config.monitors.home
+local targetMonitor = config.monitors.home2
 local monitorWasConnected = false
 
 local function checkBluetoothResult(rc, stdout, stderr)

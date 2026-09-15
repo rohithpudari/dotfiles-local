@@ -60,6 +60,7 @@ bind yg composite js document.location.href.replace(/$/,".git") | clipboard yank
 " Put websites in ignore mode to prevent interference with typing tests
 autocmd DocStart ^https://(www\.)?monkeytype\.com mode ignore
 autocmd DocStart ^https://(www\.)?speedcoder\.net mode ignore
+autocmd DocStart ^https://(www\.)?turbotype\.co mode ignore
 
 " Put Overleaf in ignore mode to prevent interference with overleaf vim editor
 autocmd DocStart ^https://(www\.)?overleaf\.com/project/.* mode ignore

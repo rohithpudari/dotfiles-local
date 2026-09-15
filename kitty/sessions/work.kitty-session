@@ -1,0 +1,12 @@
+cd ~
+
+new_tab editor
+launch nvim
+
+new_tab opencode
+launch sandbox-opencode
+
+new_tab anti-gravity
+launch agy
+
+focus_tab title:editor

@@ -58,7 +58,7 @@ nono-sandbox() {
 }
 
 sandbox-opencode() {
-    nono-sandbox my-opencode opencode -- "$@"
+    nono-sandbox my-opencode opencode --port -- "$@"
 }
 
 sandbox-guard() {

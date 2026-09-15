@@ -22,7 +22,7 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.coding.Luasnip" },
 		{ import = "lazyvim.plugins.extras.coding.Mini-comment" },
 		{ import = "lazyvim.plugins.extras.coding.blink" },
-		{ import = "lazyvim.plugins.extras.ai.copilot" },
+		{ import = "lazyvim.plugins.extras.ai.copilot-native" },
 		{ import = "lazyvim.plugins.extras.lang.python" },
 		{ import = "lazyvim.plugins.extras.lang.markdown" },
 		{ import = "lazyvim.plugins.extras.lang.toml" },

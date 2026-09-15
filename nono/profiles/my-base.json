@@ -7,6 +7,11 @@
     "access": "readwrite"
   },
   "filesystem": {
-    "read": ["~/.dotfiles", "~/.dotfiles_local", "~/.gitconfig_local"]
+    "read": [
+      "~/.dotfiles",
+      "~/.dotfiles_local",
+      "~/.gitconfig_local",
+      "~/.catppuccin.gitconfig"
+    ]
   }
 }
