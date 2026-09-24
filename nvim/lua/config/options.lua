@@ -20,6 +20,7 @@ opt.softtabstop = 4 -- one tab = 4 spaces
 opt.shiftwidth = 4 -- Size of an indent (one tab = 4 spaces)
 opt.showcmd = false
 opt.smoothscroll = true -- Smooth scrolling
+opt.spell = false -- disable spell checking
 opt.swapfile = false -- Disable swap file
 opt.tabstop = 4 -- Number of spaces tabs count for
 opt.ttyfast = true -- faster scrolling

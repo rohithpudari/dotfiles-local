@@ -9,6 +9,9 @@
 -- store original vimwiki_list config, we will need it later
 -- !!!make sure vimwiki plugin is loaded before running this!!!
 
+-- disable default spell check from lazyvim defaults as it is handled by harper_ls
+vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+
 -- Open Help to right split
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "help",

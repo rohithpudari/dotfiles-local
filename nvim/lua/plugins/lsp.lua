@@ -19,7 +19,7 @@ return {
 								SentenceCapitalization = true,
 								UnclosedQuotes = true,
 								WrongApostrophe = false,
-								LongSentences = true,
+								LongSentences = false,
 								RepeatedWords = true,
 								Spaces = true,
 								CorrectNumberSuffix = true,
